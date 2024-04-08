@@ -23,3 +23,58 @@ function startGame(){
     console.log("Game started...")
 }
 
+/**
+ * Show instruction-html in board_area
+ * 
+ */
+function showInstructions() {
+    
+}
+
+/**
+ * Add clicked letter to the right position in the answer_area 
+ */
+function addLetter() {
+    
+}
+
+/**
+ * Check if the word in the answer_area equals the picked word
+ *  
+ */
+function checkWord() {
+    
+}
+
+/**
+ * Remove all letters in the answer_area
+ *  
+ */
+function clearWord() {
+    
+}
+
+/**
+ * 
+ */
+function endGame() {
+    
+}
+
+/**
+ * 
+ * @param {string} word 
+ * @returns 
+ */
+function scrambleLetters(word) {
+    
+    return scrambledWord;
+}
+
+/**
+ * Show the next letter in the picked word
+ */
+function showLetter() {
+    
+}
+
