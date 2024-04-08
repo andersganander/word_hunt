@@ -17,8 +17,11 @@ body{
 
 }
 
+/* Grid with 3 rows and 3 cols to hold the letters*/
 #board_area{
-
+    display:grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
 }
 
 #answer_area{
@@ -27,6 +30,16 @@ body{
 
 #controls_area{
 
+}
+
+/* Square for each letter */
+.letter_square{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid black;
 }
 
 /* Buttons */

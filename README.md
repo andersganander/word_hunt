@@ -1,4 +1,4 @@
-# Word hunt
+# Word hunt (under construction)
 
 Word hunt is a word puzzle game that is based on 'Ordjakten' which is published daily in the swedish Newspaper, Svenska Dagbladet. The objective with the printed game is to find as many words with at least four letters (where on e should be the the letter in the black square in the middle). In this version of the game, the objective is to use all nine letters to construct a valid word. 
 
