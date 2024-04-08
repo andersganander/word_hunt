@@ -1,0 +1,35 @@
+/* Global */
+
+/* Standard theme. Might be changed to classes for dark and light... */
+body{
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
+    text-align: center;
+}
+
+/* Game related styles */
+#game_area{
+
+}
+
+#time_score_area{
+
+}
+
+#board_area{
+
+}
+
+#answer_area{
+
+}
+
+#controls_area{
+
+}
+
+/* Buttons */
+
+
+/* Media querys */
