@@ -23,9 +23,16 @@ function init() {
 function handleSquareClicked (event){
     const element = event.target;
     document.getElementById("userWord").value += element.innerText;
-
     //console.log('Text: '+element.innerText);
-    console.log('Text: '+document.getElementById("userWord").value);
+    const letterBoxes = document.getElementsByClassName('user_letter');
+    for (const letter of letterBoxes) {
+        if (letter.innerText === '_'){
+            letter.innerText = element.innerText;
+            break;
+        }
+    }
+    
+    //console.log('Text: '+document.getElementById("userWord").value);
 }
 
 
