@@ -1,5 +1,29 @@
 // Handle event DOMContentLoaded
-document.addEventListener('DOMContentLoaded', startGame());
+document.addEventListener('DOMContentLoaded', init());
+
+/**
+ * Initializes event listeners etc
+ */
+function init() {
+    const letters = document.getElementsByClassName('letter_square');
+    for (const letter of letters) {
+        letter.addEventListener('click',handleSquareClicked);
+    }
+
+    startGame();
+}
+
+/**
+ * 
+ */
+function handleSquareClicked (event){
+    const element = event.target;
+    document.getElementById("userWord").value += element.innerText;
+
+    //console.log('Text: '+element.innerText);
+    console.log('Text: '+document.getElementById("userWord").value);
+}
+
 
 /**
  * Function to be called when start game button is clicked
