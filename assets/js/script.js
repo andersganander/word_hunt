@@ -10,6 +10,8 @@ function init() {
         letter.addEventListener('click',handleSquareClicked);
     }
 
+    document.getElementById('btn_blender').addEventListener('click', handleBtnBlender);
+
     startGame();
 }
 
@@ -35,6 +37,16 @@ function handleSquareClicked (event){
     //console.log('Text: '+document.getElementById("userWord").value);
 }
 
+/**
+ * 
+ * @param {*} event 
+ */
+function handleBtnBlender (event){
+    console.log("Blender button pressed...");
+    const boardLetters = getLettersFromBoardAsString();
+    putLettersOnBoard(scrambleLetters(boardLetters));
+}
+
 
 /**
  * Function to be called when start game button is clicked
@@ -46,17 +58,38 @@ function startGame(){
     const pickedWord = nineletterWords[Math.floor(Math.random() * nineletterWords.length)]
     const scrambledWord = scrambleLetters(pickedWord);
 
-    // Put letters in board area (unrandomly now... will be changed to random)
-    const squares = document.getElementsByClassName('letter_square');
-    for (let i = 0; i<squares.length; i++) {
-        let square = squares[i];
-        square.textContent = scrambledWord[i];
-    }
+    // Put letters in board area 
+    putLettersOnBoard(scrambledWord);
 
     // Start timer and show on screen
 
     // Update score 
     console.log("Game started...")
+}
+
+/**
+ * 
+ * @param {*} scrambledWord 
+ */
+function putLettersOnBoard(scrambledWord) {
+    const squares = document.getElementsByClassName('letter_square');
+    for (let i = 0; i < squares.length; i++) {
+        let square = squares[i];
+        square.textContent = scrambledWord[i];
+    }
+}
+
+/**
+ * 
+ */
+function getLettersFromBoardAsString() {
+    const squares = document.getElementsByClassName('letter_square');
+    let letters = '';
+    for (let i = 0; i < squares.length; i++) {
+        letters += squares[i].innerText;
+    }
+    console.log("getLettersFromBoardAsString returning:"+letters)
+    return letters;
 }
 
 /**

@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Font Awesome-->
+        <script src="https://kit.fontawesome.com/4278793463.js" crossorigin="anonymous"></script>
         <title>Word Hunt</title>
     </head>
     <body>
@@ -31,7 +33,20 @@
                 <div class="user_letter">_</div>
                 <div class="user_letter">_</div>
             </div>
-            <div id="controls_area"></div>
+            <div id="controls_area">
+                <button id="btn_blender" class="control">
+                    <i class="fa-solid fa-blender"></i>
+                </button>
+                <button id="btn_letter" class="control">
+                    <i class="fa-solid fa-square-h"></i>
+                </button>
+                <button id="btn_enter" class="control">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+                <button id="btn_clear" class="control">
+                    <i class="fa-solid fa-eraser"></i>
+                </button>
+            </div>
         </div>
         <!-- Mainly for testing purposes so far... -->
         <input type="hidden" id="userWord" value=""/>
