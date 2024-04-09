@@ -13,8 +13,12 @@ function init() {
     startGame();
 }
 
+
 /**
- * 
+ * Event handler for click events on elements with class="letter_square"
+ * Adds the letter in the clicked square and adds it to the hidden field userWord
+ *
+ * @param {*} event 
  */
 function handleSquareClicked (event){
     const element = event.target;
