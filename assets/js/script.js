@@ -9,12 +9,13 @@ function startGame(){
     // Pick a random word
     const nineletterWords = ["ADVENTURE", "BRILLIANT", "CHOCOLATE", "DANGEROUS", "EDUCATION"];
     const pickedWord = nineletterWords[Math.floor(Math.random() * nineletterWords.length)]
+    const scrambledWord = scrambleLetters(pickedWord);
 
     // Put letters in board area (unrandomly now... will be changed to random)
     const squares = document.getElementsByClassName('letter_square');
     for (let i = 0; i<squares.length; i++) {
         let square = squares[i];
-        square.textContent=pickedWord[i];
+        square.textContent = scrambledWord[i];
     }
 
     // Start timer and show on screen
@@ -62,13 +63,24 @@ function endGame() {
 }
 
 /**
+ * Takes a word as input, scrambles the letters and
+ * returns the new word.
  * 
  * @param {string} word 
- * @returns 
+ * @returns string
  */
-function scrambleLetters(word) {
-    
-    return scrambledWord;
+function scrambleLetters(word) { 
+    const origLen = word.length;
+    let newLen = origLen;
+    let newWord='';
+    let x = 0;
+    for (let i=0;i<origLen;i++){
+        let x = Math.floor(Math.random()*newLen);
+        newWord += word.charAt(x);
+        word = word.substring(0,x) + word.substring(x+1,newLen+1);
+        newLen = word.length;
+    }
+    return newWord;
 }
 
 /**
