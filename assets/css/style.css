@@ -19,7 +19,14 @@ body{
 }
 
 #time_score_area{
+    display:flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-weight: bold;
+}   
 
+#timer_value{
+    margin-right: 10px;
 }
 
 #general_controls_area{
@@ -32,7 +39,7 @@ body{
     display:grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 #answer_area{
