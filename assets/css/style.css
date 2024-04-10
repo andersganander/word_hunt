@@ -13,7 +13,9 @@ body{
 
 /* Game related styles */
 #game_area{
-
+    /*display: flex;
+    justify-content : center;
+    align-items: center;*/
 }
 
 #time_score_area{
