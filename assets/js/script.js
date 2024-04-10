@@ -5,12 +5,18 @@ document.addEventListener('DOMContentLoaded', init());
  * Initializes event listeners etc
  */
 function init() {
+   /* Event listeners for the letters */
     const letters = document.getElementsByClassName('letter_square');
     for (const letter of letters) {
         letter.addEventListener('click',handleSquareClicked);
     }
 
+    /* Event listeners for buttons in controls area*/
     document.getElementById('btn_blender').addEventListener('click', handleBtnBlender);
+    document.getElementById('btn_erase').addEventListener('click', handleBtnErase);
+    document.getElementById('btn_enter').addEventListener('click', handleBtnEnter);
+
+
 
     startGame();
 }
@@ -18,14 +24,13 @@ function init() {
 
 /**
  * Event handler for click events on elements with class="letter_square"
- * Adds the letter in the clicked square and adds it to the hidden field userWord
+ * Adds the letter in the clicked square and to the next free letter box in the answer_area
  *
  * @param {*} event 
  */
 function handleSquareClicked (event){
     const element = event.target;
-    document.getElementById("userWord").value += element.innerText;
-    //console.log('Text: '+element.innerText);
+    
     const letterBoxes = document.getElementsByClassName('user_letter');
     for (const letter of letterBoxes) {
         if (letter.innerText === '_'){
@@ -34,7 +39,6 @@ function handleSquareClicked (event){
         }
     }
     
-    //console.log('Text: '+document.getElementById("userWord").value);
 }
 
 /**
@@ -47,6 +51,33 @@ function handleBtnBlender (event){
     putLettersOnBoard(scrambleLetters(boardLetters));
 }
 
+/**
+ * 
+ */
+function handleBtnErase() {
+    const letterBoxes = document.getElementsByClassName('user_letter');
+    for (const letter of letterBoxes) {
+        letter.innerText = '_';
+    }
+    addColorToUserInputLetters('white');
+}
+
+/**
+ * 
+ */
+function handleBtnEnter() {
+   const pickedWord = document.getElementById('pickedWord').value;
+   console.log("Picked: "+pickedWord);
+   const userWord = getLettersFromUserInputAsString();
+    console.log("User: "+userWord);
+   if (pickedWord === userWord) {
+        console.log("CORRECT !!!")
+        addColorToUserInputLetters('lightgreen');
+   } else {
+        console.log("INININCORRECT !!!");
+        addColorToUserInputLetters('indianred');
+   }
+}
 
 /**
  * Function to be called when start game button is clicked
@@ -54,9 +85,13 @@ function handleBtnBlender (event){
  */
 function startGame(){
     // Pick a random word
-    const nineletterWords = ["ADVENTURE", "BRILLIANT", "CHOCOLATE", "DANGEROUS", "EDUCATION"];
+    const nineletterWords = ["ADVENTURE", "BRILLIANT", "CHOCOLATE", "DANGEROUS", "EDUCATION","BUTTERFLY",
+    "CANNISTER"];
     const pickedWord = nineletterWords[Math.floor(Math.random() * nineletterWords.length)]
     const scrambledWord = scrambleLetters(pickedWord);
+
+    // Add the picked word to a hidden field
+    document.getElementById('pickedWord').value = pickedWord;
 
     // Put letters in board area 
     putLettersOnBoard(scrambledWord);
@@ -92,6 +127,28 @@ function getLettersFromBoardAsString() {
     return letters;
 }
 
+/** 
+ * 
+*/
+function getLettersFromUserInputAsString() {
+    const boxes = document.getElementsByClassName('user_letter');
+    let letters = '';
+    for (let i = 0; i < boxes.length; i++) {
+        letters += boxes[i].innerText;
+    }
+    console.log("getLettersFromUserInputAsString returning:"+letters)
+    return letters;
+}
+
+function addColorToUserInputLetters(color){
+    const boxes = document.getElementsByClassName('user_letter');
+    let letters = '';
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].style.backgroundColor = color;
+    }
+    console.log("addColorToUserInputLetters: "+color);
+}
+
 /**
  * Show instruction-html in board_area
  * 
@@ -119,7 +176,7 @@ function checkWord() {
  * Remove all letters in the answer_area
  *  
  */
-function clearWord() {
+function eraseWord() {
     
 }
 
