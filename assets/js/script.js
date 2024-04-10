@@ -11,13 +11,17 @@ function init() {
         letter.addEventListener('click',handleSquareClicked);
     }
 
+    /* Event listeners for buttons in general_controls area*/
+    document.getElementById('btn_start').addEventListener('click', startGame);
+    
+
     /* Event listeners for buttons in controls area*/
     document.getElementById('btn_blender').addEventListener('click', handleBtnBlender);
     document.getElementById('btn_erase').addEventListener('click', handleBtnErase);
     document.getElementById('btn_enter').addEventListener('click', handleBtnEnter);
     document.getElementById('btn_letter').addEventListener('click', handleBtnLetter);
 
-    startGame();
+    /*startGame();*/
 }
 
 
@@ -99,6 +103,22 @@ function handleBtnLetter() {
  * 
  */
 function startGame(){
+    // Disable buttons that won't be used during the game
+    document.getElementById("btn_start").disabled = true;
+    document.getElementById("btn_info").disabled = true;
+    document.getElementById("btn_dark").disabled = true;
+    document.getElementById("btn_highscore").disabled = true;
+
+    // Make start and info buttons grey
+    document.getElementById("btn_start").classList.remove("btn_green");
+    document.getElementById("btn_info").classList.remove("btn_green");
+
+    // Enable the game control buttons
+    document.getElementById("btn_blender").disabled = false;
+    document.getElementById("btn_letter").disabled = false;
+    document.getElementById("btn_enter").disabled = false;
+    document.getElementById("btn_erase").disabled = false;
+
     // Pick a random word
     const nineletterWords = ["ADVENTURE", "BRILLIANT", "CHOCOLATE", "DANGEROUS", "EDUCATION","BUTTERFLY",
     "CANNISTER"];

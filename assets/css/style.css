@@ -34,6 +34,10 @@ body{
     justify-content: space-between;
 }
 
+.btn_green{
+    background-color: lightgreen;
+}
+
 /* Grid with 3 rows and 3 cols to hold the letters*/
 #board_area{
     display:grid;
