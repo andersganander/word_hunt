@@ -15,8 +15,7 @@ function init() {
     document.getElementById('btn_blender').addEventListener('click', handleBtnBlender);
     document.getElementById('btn_erase').addEventListener('click', handleBtnErase);
     document.getElementById('btn_enter').addEventListener('click', handleBtnEnter);
-
-
+    document.getElementById('btn_letter').addEventListener('click', handleBtnLetter);
 
     startGame();
 }
@@ -77,6 +76,22 @@ function handleBtnEnter() {
         console.log("INININCORRECT !!!");
         addColorToUserInputLetters('indianred');
    }
+}
+
+/**
+ * 
+ */
+function handleBtnLetter() {
+    const pickedWord = document.getElementById('pickedWord').value;
+    /*const userLetters = getLettersFromUserInputAsString();*/
+    const userLetters = document.getElementsByClassName('user_letter');
+    /*console.log(pickedWord + ' ' +userLetters);*/
+    for (let i = 0; i < userLetters.length;i++){
+        if(userLetters[i].innerText === '_'){
+            userLetters[i].innerText = pickedWord[i];
+            break;
+        }
+    }
 }
 
 /**
