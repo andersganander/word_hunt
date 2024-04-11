@@ -132,20 +132,23 @@ function startGame(){
     putLettersOnBoard(scrambledWord);
 
     // Start timer and write to console (temporary solution)
-    // Change startScore to time in seconds (5 minutes = 300 sec = 300p)
+    // Change score to time in seconds (5 minutes = 300 sec = 300p)
     let score = 5;
+    document.getElementById('score_value').innerText = score;
+    score-- ;
     let scoreCounter = setInterval(function(){
         console.log('Current score: ' + score + ' p');
+        document.getElementById('score_value').innerText = score;
         score -= 1;
       
         if (score < 0) {
           clearInterval(scoreCounter);
           console.log("Time's up!");
-          addColorToUserInputLetters('blue');
+          addColorToUserInputLetters('indianred');
         }
     },1000);
 
-    // Update score 
+     
     console.log("Game started...")
 }
 
