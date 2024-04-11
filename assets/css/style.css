@@ -20,9 +20,10 @@ body{
 
 #time_score_area{
     display:flex;
-    justify-content: center;
-    margin: 15px 15px;
-    font-size: 1.3rem;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /*font-size: 1.3rem;*/
     font-weight: bold;
 }   
    
@@ -34,6 +35,7 @@ body{
 #general_controls_area{
     display:flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .btn_green{
@@ -48,10 +50,19 @@ body{
     margin-top: 5px;
 }
 
+#message_area{
+    background-color: black;
+    color: white;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
 #answer_area{
     display:flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 
