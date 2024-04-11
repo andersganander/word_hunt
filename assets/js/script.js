@@ -1,6 +1,9 @@
 // Handle event DOMContentLoaded
 document.addEventListener('DOMContentLoaded', init());
 
+// Global variable that contains value for score reduction 
+let scoreReduction = 0;
+
 /**
  * Initializes event listeners etc
  */
@@ -50,6 +53,10 @@ function handleSquareClicked (event){
  */
 function handleBtnBlender (event){
     console.log("Blender button pressed...");
+    // Reduce score and send message to user
+    scoreReduction = 25;
+    writeMessage('Scramble letters: -'+scoreReduction+' p');
+
     const boardLetters = getLettersFromBoardAsString();
     putLettersOnBoard(scrambleLetters(boardLetters));
 }
@@ -58,9 +65,17 @@ function handleBtnBlender (event){
  * 
  */
 function handleBtnErase() {
+     
     const letterBoxes = document.getElementsByClassName('user_letter');
-    for (const letter of letterBoxes) {
-        letter.innerText = '_';
+    for (let i=0;i<letterBoxes.length;i++) {
+        if(letterBoxes[i].innerText === '_'){
+            if(i>0){
+                letterBoxes[i-1].innerText = '_';
+                /* Reduce score and write message to user */
+                scoreReduction = 10;
+                writeMessage('Erase letter: -'+scoreReduction+' p');
+            }
+        }
     }
     addColorToUserInputLetters('white');
 }
@@ -87,9 +102,12 @@ function handleBtnEnter() {
  */
 function handleBtnLetter() {
     const pickedWord = document.getElementById('pickedWord').value;
-    /*const userLetters = getLettersFromUserInputAsString();*/
     const userLetters = document.getElementsByClassName('user_letter');
-    /*console.log(pickedWord + ' ' +userLetters);*/
+
+    /* Reduce score and write message to user */
+    scoreReduction = 50;
+    writeMessage('Next letter: -'+scoreReduction+' p');
+    
     for (let i = 0; i < userLetters.length;i++){
         if(userLetters[i].innerText === '_'){
             userLetters[i].innerText = pickedWord[i];
@@ -133,18 +151,26 @@ function startGame(){
 
     // Start timer and write to console (temporary solution)
     // Change score to time in seconds (5 minutes = 300 sec = 300p)
-    let score = 5;
+    let score = 100;
     document.getElementById('score_value').innerText = score;
     score-- ;
     let scoreCounter = setInterval(function(){
         console.log('Current score: ' + score + ' p');
+        if(scoreReduction > 0){
+            console.log('Reduces score with '+scoreReduction);
+            score -= scoreReduction;
+            scoreReduction = 0;
+        }
+
         document.getElementById('score_value').innerText = score;
         score -= 1;
       
         if (score < 0) {
-          clearInterval(scoreCounter);
-          console.log("Time's up!");
-          addColorToUserInputLetters('indianred');
+            document.getElementById('score_value').innerText='0';
+            clearInterval(scoreCounter);
+            console.log("Time's up!");
+            addColorToUserInputLetters('indianred');
+         
         }
     },1000);
 
@@ -152,7 +178,7 @@ function startGame(){
     console.log("Game started...")
 }
 
-function timerCountDown(timeLeft){
+/*function timerCountDown(timeLeft){
     console.log('Time left: ' + timeLeft + ' seconds');
     timeLeft -= 1;
   
@@ -161,7 +187,7 @@ function timerCountDown(timeLeft){
       console.log("Time's up!");
       addColorToUserInputLetters('blue')
     }
-}
+} */
 
 /**
  * 
@@ -199,6 +225,10 @@ function getLettersFromUserInputAsString() {
     }
     console.log("getLettersFromUserInputAsString returning:"+letters)
     return letters;
+}
+
+function writeMessage(msg) {
+    document.getElementById('message_area').innerText='$ '+msg;
 }
 
 function addColorToUserInputLetters(color){
