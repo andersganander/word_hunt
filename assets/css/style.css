@@ -22,9 +22,10 @@ body{
     display:flex;
     justify-content: center;
     margin: 15px 15px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }   
+   
 
 #timer_value{
     margin-right: 10px;
