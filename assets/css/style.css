@@ -21,7 +21,8 @@ body{
 #time_score_area{
     display:flex;
     justify-content: center;
-    margin-top: 15px;
+    margin: 15px 15px;
+    font-size: 1.5rem;
     font-weight: bold;
 }   
 
