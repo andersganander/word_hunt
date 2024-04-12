@@ -112,7 +112,18 @@ Wireframes were produced using Balsamiq. Since the first wireframes where made f
 
 
 ### User story testing
-The tests has been done with Chrome on macOs
+The tests has been done with Chrome on macOs. 
+
+|  Feature | Expected result | Action | Actual result |
+| :--- | :--- | :--- | :--- |
+
+
+
+<details>
+    <summary>Test results</summary>
+
+</details>
+
 
 ![Feature testing]()
 

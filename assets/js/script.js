@@ -122,7 +122,8 @@ function handleBtnLetter() {
  * Set things up after a game is finished and prepare for a new game
  */
 function prepareNewGame(){
-
+    // maybe not needed
+    console.log('preparing new game...');
 }
 
 /**
@@ -131,20 +132,13 @@ function prepareNewGame(){
  */
 function startGame(){
     // Disable buttons that won't be used during the game
-    document.getElementById("btn_start").disabled = true;
-    document.getElementById("btn_info").disabled = true;
-    document.getElementById("btn_dark").disabled = true;
-    document.getElementById("btn_highscore").disabled = true;
+    enableGeneralControlButtons(false);
 
     // Make start and info buttons grey
-    document.getElementById("btn_start").classList.remove("btn_green");
-    document.getElementById("btn_info").classList.remove("btn_green");
+    makeStartInfoBtnsGreen();
 
     // Enable the game control buttons
-    document.getElementById("btn_blender").disabled = false;
-    document.getElementById("btn_letter").disabled = false;
-    document.getElementById("btn_enter").disabled = false;
-    document.getElementById("btn_erase").disabled = false;
+    enableGameControlButtons(true);
 
     // Pick a random word
     const nineletterWords = ["ADVENTURE", "BRILLIANT", "CHOCOLATE", "DANGEROUS", "EDUCATION","BUTTERFLY",
@@ -188,6 +182,51 @@ function startGame(){
 
      
     console.log("Game started...")
+}
+
+/**
+ * Adds/remove class btn_green to start and info buttons
+ * true -> 
+ * false -> 
+ * @param {boolean} active 
+ */
+function makeStartInfoBtnsGreen(active) {
+    if(active){
+        document.getElementById("btn_start").classList.add("btn_green");
+        document.getElementById("btn_info").classList.add("btn_green");
+    } else {
+        document.getElementById("btn_start").classList.remove("btn_green");
+        document.getElementById("btn_info").classList.remove("btn_green");
+    }
+    
+}
+
+/**
+ * Enables/disables the general control buttons
+ * true -> enables buttons
+ * false -> disables buttons
+ * 
+ * @param {boolean} enable 
+ */
+function enableGeneralControlButtons(enable) {
+    document.getElementById("btn_start").disabled = !enable;
+    document.getElementById("btn_info").disabled = !enable;
+    document.getElementById("btn_dark").disabled = !enable;
+    document.getElementById("btn_highscore").disabled = !enable;
+}
+
+/**
+ * Enables/disables the game control buttons
+ * true -> enables buttons
+ * false -> disables buttons
+ * 
+ * @param {boolean} enable 
+ */
+function enableGameControlButtons(enable) {
+    document.getElementById("btn_blender").disabled = !enable;
+    document.getElementById("btn_letter").disabled = !enable;
+    document.getElementById("btn_enter").disabled = !enable;
+    document.getElementById("btn_erase").disabled = !enable;
 }
 
 /**
@@ -285,13 +324,20 @@ function endGame() {
     if (score === 0) {
         console.log("Time's up!");
         addColorToUserInputLetters('indianred');
-        writeMessage('GAME OVER !!!')
-        // Show the correct word    
+        writeMessage('GAME OVER !!! Correct word:');
+        // Show the correct word   
+
     } else {
         console.log("CORRECT !!!")
         addColorToUserInputLetters('lightgreen');
         writeMessage('Congrats !! Your score: '+score);
     }
+   
+    enableGameControlButtons(false);
+    enableGeneralControlButtons(true);
+    makeStartInfoBtnsGreen(true);
+    
+
     prepareNewGame();
     // show high score list
 
