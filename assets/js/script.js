@@ -1,8 +1,11 @@
 // Handle event DOMContentLoaded
 document.addEventListener('DOMContentLoaded', init());
 
+// GLOBAL VARIABLES
 // Global variable that contains value for score reduction 
 let scoreReduction = 0;
+// Global variable that holds the state of the game 
+let gameIsOn = false;
 
 /**
  * Initializes event listeners etc
@@ -89,8 +92,7 @@ function handleBtnEnter() {
    const userWord = getLettersFromUserInputAsString();
     console.log("User: "+userWord);
    if (pickedWord === userWord) {
-        console.log("CORRECT !!!")
-        addColorToUserInputLetters('lightgreen');
+       endGame();
    } else {
         console.log("INININCORRECT !!!");
         addColorToUserInputLetters('indianred');
@@ -114,6 +116,13 @@ function handleBtnLetter() {
             break;
         }
     }
+}
+
+/**
+ * Set things up after a game is finished and prepare for a new game
+ */
+function prepareNewGame(){
+
 }
 
 /**
@@ -149,6 +158,9 @@ function startGame(){
     // Put letters in board area 
     putLettersOnBoard(scrambledWord);
 
+    // Change the state of the game by using the GLOBAL variable gameIsOn
+    gameIsOn = true;
+
     // Start timer and write to console (temporary solution)
     // Change score to time in seconds (5 minutes = 300 sec = 300p)
     let score = 100;
@@ -165,29 +177,18 @@ function startGame(){
         document.getElementById('score_value').innerText = score;
         score -= 1;
       
-        if (score < 0) {
-            document.getElementById('score_value').innerText='0';
+        if (score < 0 || gameIsOn === false) {
+            if (score < 0){
+                document.getElementById('score_value').innerText='0';
+                endGame();
+            }
             clearInterval(scoreCounter);
-            console.log("Time's up!");
-            addColorToUserInputLetters('indianred');
-         
         }
     },1000);
 
      
     console.log("Game started...")
 }
-
-/*function timerCountDown(timeLeft){
-    console.log('Time left: ' + timeLeft + ' seconds');
-    timeLeft -= 1;
-  
-    if (timeLeft < 0) {
-      clearInterval(timerId);
-      console.log("Time's up!");
-      addColorToUserInputLetters('blue')
-    }
-} */
 
 /**
  * 
@@ -228,6 +229,7 @@ function getLettersFromUserInputAsString() {
 }
 
 function writeMessage(msg) {
+    // Add possibility to choose color?
     document.getElementById('message_area').innerText='$ '+msg;
 }
 
@@ -272,10 +274,27 @@ function eraseWord() {
 }
 
 /**
+ * Evalutes the score and checks if the user lost
  * 
+ * 
+ * @param {*} score 
  */
 function endGame() {
-    
+    gameIsOn = false;
+    const score = parseInt(document.getElementById('score_value').innerText);
+    if (score === 0) {
+        console.log("Time's up!");
+        addColorToUserInputLetters('indianred');
+        writeMessage('GAME OVER !!!')
+        // Show the correct word    
+    } else {
+        console.log("CORRECT !!!")
+        addColorToUserInputLetters('lightgreen');
+        writeMessage('Congrats !! Your score: '+score);
+    }
+    prepareNewGame();
+    // show high score list
+
 }
 
 /**
