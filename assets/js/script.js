@@ -19,6 +19,7 @@ function init() {
 
     /* Event listeners for buttons in general_controls area*/
     document.getElementById('btn_start').addEventListener('click', startGame);
+    document.getElementById('btn_info').addEventListener('click', showInfo);
     
 
     /* Event listeners for buttons in controls area*/
@@ -182,6 +183,22 @@ function startGame(){
 
      
     console.log("Game started...")
+}
+
+/**
+ * Make info_area visible and hide any other area that is visible
+ * If it's already visible it becomes invisible, then the start screen is shown
+ */
+function showInfo(){
+    const display = document.getElementById('info_area').style.display; 
+    if( display === 'none'){
+        document.getElementById('info_area').style.display="block";
+        document.getElementById('board_area').style.display="none";
+    } else {
+        document.getElementById('board_area').style.display="grid";        
+        document.getElementById('info_area').style.display="none";
+    }
+    
 }
 
 /**

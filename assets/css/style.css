@@ -50,6 +50,13 @@ body{
     margin-top: 5px;
 }
 
+#info_area{
+    display:none;
+    background-color: whitesmoke;
+    height: 300px;
+    width: 300px;
+}
+
 #message_area{
     background-color: black;
     color: white;
