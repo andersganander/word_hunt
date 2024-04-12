@@ -55,6 +55,14 @@ body{
     background-color: whitesmoke;
     height: 300px;
     width: 300px;
+    font-family:"Nanum Pen Script";
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.info_heading{
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
 #message_area{
@@ -113,5 +121,11 @@ body{
 
 /* Buttons */
 
+/* Google Font */
+.nanum-pen script-regular {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
 
 /* Media querys */
