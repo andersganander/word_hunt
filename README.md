@@ -10,19 +10,23 @@ The live link can be found here - [Word Hunt](https://andersganander.github.io/w
 ![Am I Responsive Image]()
 
 ## Site Owner Goals 
-- To 
+- As a site owner i want to provide the users an exciting and smooth game experience to make them willing to return to my site.
 
 ## User Stories
 - ### First time user
-  - As a first time user I want to 
+  - As a first time user I want to quickly understand what the game is about and how to play
 
 - ### Returning User
-  - As a returning user I want to 
+  - As a returning user I want to be able to start the game without having to read instructions
+  - As a returning user I want to have the possibility to read the instructions if i need to
+  - As a returning user I want to check the high score to see if i still have the highest score
 
 - ### Frequent User
-  - As a frequent user I want to 
+  -As a returning user I want to check the high score list to see if i still have the highest score
+
 
 ## Design
+
 
 ### Imagery
 
@@ -33,7 +37,14 @@ The live link can be found here - [Word Hunt](https://andersganander.github.io/w
 ### Fonts
 
 ## Wireframes
-Wireframes were produced using Balsamiq. 
+Wireframes were produced using Balsamiq. Since the first wireframes where made for mobile they does not fully match the result. The desktop wireframes were made at a later stage in the process when the design had changed. These are the things that were changed during the process:
+- The heading ('WORD HUNT') was removed. Instead the start screen shows the grid withe words 'WORD' and 'HUNT' in it.
+- The buttons for 'Start game' and 'How to play' was changed to buttons with icons and moved to the top
+- A button for showing the high score list was added
+- The user name input field was moved and placed next to the score field
+- The timer field was removed since the score is based completely on the time left.
+- A new message field was introduced and placed between the grid and the user input letters. The message field is used for communicating to the user during the game.
+- A new button for erasing a letter was added.
 
  <details>
 
@@ -56,14 +67,23 @@ Wireframes were produced using Balsamiq.
 ## Features
 - ### Navigation
 
-    - The 
+    - Since the game is presented on a single page there is really no navigation (links to internal or external pages).
+    - At the top of the screen there is bar with control buttons which represents different actions which includes
+        - Play button to start the game
+        - Info button to show instructions
+        - Button for showing the high score list
 
-![Navigation image]()
+![General controls bar](docs/readme_images/control_bar.jpg)
 
 - ### The Start Screen
     - The 
 
 ![Start screen image]() 
+
+- ### The Game Screen
+    - The 
+
+![Game screen image]() 
 
 - ### How to play screen
     - On the 
@@ -86,7 +106,7 @@ Wireframes were produced using Balsamiq.
     -  The site was tested with W3C CSS Validator, without any errors.
 
 - #### Accessibility 
-    - The site was tested for accessibility with Ligthouse and received a good result.
+    - The site was tested for accessibility with Ligthouse and 
 
 ![Lighthouse score]()
 

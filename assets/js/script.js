@@ -1,7 +1,7 @@
 // Handle event DOMContentLoaded
 document.addEventListener('DOMContentLoaded', init());
 
-// GLOBAL VARIABLES
+// GLOBAL VARIABLES, USE WITH CAUTION
 // Global variable that contains value for score reduction 
 let scoreReduction = 0;
 // Global variable that holds the state of the game 
