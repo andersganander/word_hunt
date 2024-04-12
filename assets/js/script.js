@@ -96,7 +96,7 @@ function handleBtnEnter() {
        endGame();
    } else {
         console.log("INININCORRECT !!!");
-        addColorToUserInputLetters('indianred');
+        addColorToUserInputLetters('#de0f0f');
    }
 }
 
@@ -340,9 +340,11 @@ function endGame() {
     const score = parseInt(document.getElementById('score_value').innerText);
     if (score === 0) {
         console.log("Time's up!");
-        addColorToUserInputLetters('indianred');
+        addColorToUserInputLetters('white');
         writeMessage('GAME OVER !!! Correct word:');
         // Show the correct word   
+        showPickedWord();
+
 
     } else {
         console.log("CORRECT !!!")
@@ -386,5 +388,16 @@ function scrambleLetters(word) {
  */
 function showLetter() {
     
+}
+
+/**
+ * 
+ */
+function showPickedWord(){
+    const word = document.getElementById('pickedWord').value;
+    const boxes = document.getElementsByClassName('user_letter');
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].innerText = word[i];
+    }
 }
 
