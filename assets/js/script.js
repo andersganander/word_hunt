@@ -133,6 +133,8 @@ function prepareNewGame(){
  * 
  */
 function startGame(){
+    // Erase all letters in letter input area
+    eraseAllInputLetters();
     // Disable buttons that won't be used during the game
     enableGeneralControlButtons(false);
 
@@ -316,6 +318,19 @@ function addColorToUserInputLetters(color){
 }
 
 /**
+ * Erase all input letters by setting innerText='_' for each letter box.
+ * Background color is the set to white
+ */
+function eraseAllInputLetters(){
+     const boxes = document.getElementsByClassName('user_letter');
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].innerText='_';
+    }
+    addColorToUserInputLetters('white');
+    console.log("Erased all input letters");
+}
+
+/**
  * Show instruction-html in board_area
  * 
  */
@@ -369,8 +384,11 @@ function endGame() {
         writeMessage('Congrats !! Your score: '+score);
     }
    
+    // disable game control buttons
     enableGameControlButtons(false);
+    // enable control buttons at the top
     enableGeneralControlButtons(true);
+    // Make start button and info button green
     makeStartInfoBtnsGreen(true);
     
 
