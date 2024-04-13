@@ -135,6 +135,12 @@ function prepareNewGame(){
 function startGame(){
     // Erase all letters in letter input area
     eraseAllInputLetters();
+
+    // Make game grid visible
+    document.getElementById('board_area').style.display="grid";
+    document.getElementById('info_area').style.display="none";
+    document.getElementById('highscore_area').style.display="none";   
+    
     // Disable buttons that won't be used during the game
     enableGeneralControlButtons(false);
 
