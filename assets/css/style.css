@@ -44,14 +44,14 @@ body{
 
 /* Grid with 3 rows and 3 cols to hold the letters*/
 #board_area{
-    display:grid;
+    /* display:grid; */
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     margin-top: 5px;
 }
 
 #info_area{
-    display:none;
+    /* display:none; */
     background-color: whitesmoke;
     height: 300px;
     width: 300px;
@@ -61,8 +61,24 @@ body{
 }
 
 .info_heading{
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#highscore_area{
+    /* display:none; */
+    background-color: black;
+    color:greenyellow;
+    height: 300px;
+    width: 300px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.hs_heading{
     font-size: xx-large;
     font-weight: bolder;
+    margin-bottom: 10px;
 }
 
 #message_area{

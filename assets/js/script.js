@@ -20,6 +20,7 @@ function init() {
     /* Event listeners for buttons in general_controls area*/
     document.getElementById('btn_start').addEventListener('click', startGame);
     document.getElementById('btn_info').addEventListener('click', showInfo);
+    document.getElementById('btn_highscore').addEventListener('click', showHighscore);
     
 
     /* Event listeners for buttons in controls area*/
@@ -194,8 +195,24 @@ function showInfo(){
     if( display === 'none'){
         document.getElementById('info_area').style.display="block";
         document.getElementById('board_area').style.display="none";
+        document.getElementById('highscore_area').style.display="none";   
     } else {
         document.getElementById('board_area').style.display="grid";        
+        document.getElementById('info_area').style.display="none";
+        document.getElementById('highscore_area').style.display="none";   
+    }
+    
+}
+
+function showHighscore(){
+    const display = document.getElementById('highscore_area').style.display; 
+    if( display === 'none'){
+        document.getElementById('highscore_area').style.display="block";
+        document.getElementById('info_area').style.display="none";
+        document.getElementById('board_area').style.display="none";
+    } else {
+        document.getElementById('board_area').style.display="grid";    
+        document.getElementById('highscore_area').style.display="none";    
         document.getElementById('info_area').style.display="none";
     }
     
