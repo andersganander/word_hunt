@@ -52,21 +52,49 @@ body{
 
 #info_area{
     /* display:none; */
-    background-color: whitesmoke;
+    font-family: "Oxanium", sans-serif;
+    background-color: white;
     height: 300px;
     width: 300px;
-    font-family:"Nanum Pen Script";
     font-size: x-large;
     font-weight: bold;
 }
 
 .info_heading{
-    font-size: larger;
+    font-size: xx-large;
     font-weight: bolder;
+    margin-bottom: unset;
+}
+
+.info_text{
+    margin-top: 5px;
+    font-size: medium;
+
+}
+
+.info_text_images{
+    text-align: left;
+    font-size: small;
+}
+
+.thumbnail{
+    width: 20px;
+    height: 20px
+}
+
+/* tagit from geeks */
+.aligned {
+    display: flex;
+    align-items: center;
+}
+  
+span {
+    padding: 10px;
 }
 
 #highscore_area{
     /* display:none; */
+    font-family: "Oxanium", sans-serif;
     background-color: black;
     color:greenyellow;
     height: 300px;

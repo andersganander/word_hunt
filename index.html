@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
         <!-- Font Awesome-->
         <script src="https://kit.fontawesome.com/4278793463.js" crossorigin="anonymous"></script>
         <title>Word Hunt</title>
@@ -55,9 +56,28 @@
             </div>
             <div id="info_area" style="display: none;">
                 <p class="info_heading">INSTRUCTIONS</p>
-                <p>FIND THE 9-LETTER WORD!</p>
-                <P>SCORE IS COUNTING DOWN FROM 300</P>
-                <P>USE HELP!</P>
+                    <p class="info_text">FIND THE 9-LETTER WORD!<br>
+                   CLICK THE LETTERS IN THE GRID<br>
+                    SCORE IS COUNTING DOWN FROM 300
+                </p>
+                <div class="info_text_images">
+                    <div class="aligned">
+                        <img src="assets/images/btn_blender_img.jpg" class="thumbnail" alt="">
+                        <span>SCRAMBLES THE LETTERS: -25p</span>
+                    </div>
+                     <div class="aligned">
+                        <img src="assets/images/btn_letter_img.jpg" class="thumbnail" alt="">
+                        <span>REVEALS ONE LETTER: -50p</span>  
+                     </div>
+                     <div class="aligned">
+                        <img src="assets/images/btn_eraser_img.jpg" class="thumbnail" alt="">
+                        <span>ERASE LAST ENTERED LETTER: -10p</span>  
+                     </div>
+                     <div class="aligned">
+                        <img src="assets/images/btn_enter_img.jpg" class="thumbnail" alt="">
+                        <span>ENTER</span>  
+                     </div>
+                </div>
             </div>
             <div id="highscore_area" style="display: none;">
                 <p class="hs_heading">LEADERBOARD</p>
