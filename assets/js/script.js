@@ -177,8 +177,9 @@ function startGame(){
             score -= scoreReduction;
             scoreReduction = 0;
         }
-
+       
         document.getElementById('score_value').innerText = score;
+        
         score -= 1;
       
         if (score < 0 || gameIsOn === false) {
