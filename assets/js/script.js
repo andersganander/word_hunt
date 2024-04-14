@@ -186,7 +186,7 @@ function startGame(){
 
     // Start timer and write to console (temporary solution)
     // Change score to time in seconds (5 minutes = 300 sec = 300p)
-    let score = 100;
+    let score = 300;
     document.getElementById('score_value').innerText = score;
     score-- ;
     let scoreCounter = setInterval(function(){
