@@ -41,7 +41,9 @@ function init() {
  */
 function handleSquareClicked (event){
     const element = event.target;
-    
+    // make clicked square green
+    this.style.backgroundColor = "lightgreen";
+
     const letterBoxes = document.getElementsByClassName('user_letter');
     for (const letter of letterBoxes) {
         if (letter.innerText === '_'){
@@ -338,6 +340,23 @@ function eraseAllInputLetters(){
 }
 
 /**
+ * Resets the board to it's start screen appearance
+ */
+function resetBoard() {
+    const word = 'WORD HUNT';
+    const squares = document.getElementsByClassName('letter_square');
+    for (let i = 0; i < squares.length; i++) {
+        let square = squares[i];
+        square.textContent = word[i];
+        if(word[i]===' '){
+            square.style.backgroundColor = "black";
+        } else {
+            square.style.backgroundColor = "white";
+        }
+    }
+}
+
+/**
  * Show instruction-html in board_area
  * 
  */
@@ -397,8 +416,10 @@ function endGame() {
     enableGeneralControlButtons(true);
     // Make start button and info button green
     makeStartInfoBtnsGreen(true);
+    // reset grid and letter squares
+    resetBoard();
     
-
+    // NOT USED YET
     prepareNewGame();
     // show high score list
 

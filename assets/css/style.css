@@ -82,7 +82,7 @@ body{
     height: 20px
 }
 
-/* tagit from geeks */
+/* These styling rules comes from geeksforgeeks.org  */
 .aligned {
     display: flex;
     align-items: center;
@@ -91,6 +91,8 @@ body{
 span {
     padding: 10px;
 }
+
+/* ---------- */
 
 #highscore_area{
     /* display:none; */
@@ -167,6 +169,10 @@ span {
     font-size: 48px;
     font-weight: bold;
     border: 1px solid black;
+}
+
+#board_area > div:hover{
+    background-color: lightgreen;
 }
 
 /* Square for the letter in the middle */
