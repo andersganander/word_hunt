@@ -152,10 +152,27 @@ function startGame(){
     // Enable the game control buttons
     enableGameControlButtons(true);
 
+    // Resetboard
+    resetBoard();
+
     // Pick a random word
-    const nineletterWords = ["ADVENTURE", "BRILLIANT", "CHOCOLATE", "DANGEROUS", "EDUCATION","BUTTERFLY",
-    "CANNISTER"];
-    const pickedWord = nineletterWords[Math.floor(Math.random() * nineletterWords.length)]
+    const nineletterWords = [
+        "Apartment", "Brilliant", "Chocolate", "Delicious", "Education", "Framework", "Gratitude", "Harmonize",
+        "Investors", "Juxtapose", "Knowledge", "Landscape", "Mountains", "Nutrition", "Orchestra", "Prototype",
+        "Questions", "Relevance", "Spherical", "Tailoring", "Umbilical", "Vacancies", "Workforce", "Xenophobe",
+        "Yesterday", "Zealously", "Attention", "Beverages", "Celebrate", "Dangerous", "Envelopes", "Favorable",
+        "Geography", "Hesitance", "Integrate", "Journeyed", "Kickstart", "Lionheart", "Multitude", "Neophytes",
+        "Operative", "Paintings", "Quicklime", "Recharged", "Satellite", "Telephone", "Unearthed", "Venerated",
+        "Wrestling", "Youthful", "Amplifier", "Biometric", "Checklist", "Decentral", "Eclipsing", "Fluoresce",
+        "Guardians", "Hydraulic", "Impulsive", "Jalapenos", "Kilometer", "Lavenders", "Magnetism", "Neglected",
+        "Obscuring", "Paternity", "Quadrants", "Revolving", "Scavenger", "Threshold", "Undulated", "Vocalists",
+        "Windstorm", "Xenonlamp", "Yearbooks", "Zinfandel", "Aerodrome", "Blackouts", "Clambered", "Deadening",
+        "Emphasize", "Frostbite", "Gondolier", "Heiresses", "Inverting", "Jerusalem", "Knockouts", "Lifetimes",
+        "Mortified", "Nightmare", "Overjoyed", "Playhouse", "Quickstep", "Recycling", "Sleekness", "Trainable",
+        "Unplugged", "Vaporizes", "Wolfberry", "Exercised", "Yachtsman", "Zookeeper"
+    ]
+    
+    const pickedWord = nineletterWords[Math.floor(Math.random() * nineletterWords.length)].toUpperCase();
     const scrambledWord = scrambleLetters(pickedWord);
 
     // Add the picked word to a hidden field
@@ -416,8 +433,6 @@ function endGame() {
     enableGeneralControlButtons(true);
     // Make start button and info button green
     makeStartInfoBtnsGreen(true);
-    // reset grid and letter squares
-    resetBoard();
     
     // NOT USED YET
     prepareNewGame();
