@@ -7,6 +7,8 @@ let scoreReduction = 0;
 let gameIsOn = false;
 // Global variable holding the high score list
 let leaderBoard = [];
+// Global variable containing user data
+let gameUserData = {};
 
 // Handle event DOMContentLoaded
 document.addEventListener('DOMContentLoaded', init());
@@ -32,6 +34,16 @@ function init() {
     document.getElementById('btn_erase').addEventListener('click', handleBtnErase);
     document.getElementById('btn_enter').addEventListener('click', handleBtnEnter);
     document.getElementById('btn_letter').addEventListener('click', handleBtnLetter);
+
+    // Read userdata from local storage
+    // Contains code from codetheweb.blog
+    const userStringFromLocalStorage = localStorage.getItem('user');
+    const userFromLocalStorage = JSON.parse(userStringFromLocalStorage);
+    console.log(userStringFromLocalStorage);
+    if (userFromLocalStorage != null){
+        gameUserData = userFromLocalStorage;
+        console.log(gameUserData);
+    }
 
     // Create initial leaderboard
      // Test code
@@ -450,6 +462,9 @@ function endGame() {
    
     showHighscore();
 
+    // Store user data
+    storeUserData();
+
     // NOT USED YET (maybe not needed ?)
     prepareNewGame();
 
@@ -561,5 +576,21 @@ function getLeaderBoardAsHTML(user){
     console.log(html);
 
     return html;
+}
+
+/**
+ * 
+ */
+function storeUserData(){
+    // Contains code from codetheweb.blog
+    const userScore = document.getElementById('score_value').innerText;
+    const user = {
+        userName: 'Player One',
+        score: userScore
+      };
+      
+      const userString = JSON.stringify(user);
+      console.log("StoreUserData: "+userString);
+      localStorage.setItem('user', userString);
 }
 
