@@ -1,11 +1,15 @@
-// Handle event DOMContentLoaded
-document.addEventListener('DOMContentLoaded', init());
+
 
 // GLOBAL VARIABLES, USE WITH CAUTION
 // Global variable that contains value for score reduction 
 let scoreReduction = 0;
 // Global variable that holds the state of the game 
 let gameIsOn = false;
+// Global variable holding the high score list
+let leaderBoard = [];
+
+// Handle event DOMContentLoaded
+document.addEventListener('DOMContentLoaded', init());
 
 /**
  * Initializes event listeners etc
@@ -28,6 +32,13 @@ function init() {
     document.getElementById('btn_erase').addEventListener('click', handleBtnErase);
     document.getElementById('btn_enter').addEventListener('click', handleBtnEnter);
     document.getElementById('btn_letter').addEventListener('click', handleBtnLetter);
+
+    // Create initial leaderboard
+     // Test code
+     createLeaderBoard();
+     const leaderBoardHTML = getLeaderBoardAsHTML();
+     document.getElementById('highscore_area').innerHTML = leaderBoardHTML;
+     // -------
 
     /*startGame();*/
 }
@@ -234,6 +245,7 @@ function showInfo(){
 
 function showHighscore(){
     const display = document.getElementById('highscore_area').style.display; 
+
     if( display === 'none'){
         document.getElementById('highscore_area').style.display="block";
         document.getElementById('info_area').style.display="none";
@@ -477,5 +489,58 @@ function showPickedWord(){
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].innerText = word[i];
     }
+}
+
+/**
+ * Creates an array of gamer objects and assign it to th global variable leaderBoard.
+ * The leaderboard is sorted by score in descending order.
+ * Each gamer object consists of a name and score.
+ */
+function createLeaderBoard(){
+    const gamerNames = ["WordSmith", "Anagram Ace", "LexiMaster", "CrosswordKid",
+        "Letter Lover","Dark Knight", "Steve Wiebe", "Billy Mitchell", "Kilroy", "Ziggy"
+    ];
+
+    // Iterate gamer names and create object for each
+    for(let i = 0; i < gamerNames.length; i++){
+        let s = Math.floor(Math.random() * 270);
+        let g = {name:gamerNames[i], score:s};    
+        leaderBoard[i] = g;
+    }
+    // sort leaderboard
+    leaderBoard.sort(compareByScore);
+}
+
+function updateLeaderBoard(user,score){
+
+}
+
+/**
+ * Compares the score for two gamer objects
+ * Is used to sort a list of gamer objects in descending order
+ * 
+ * @param {*} a 
+ * @param {*} b 
+ * @returns 
+ */
+function compareByScore(a, b) {
+    return b.score - a.score;
+  }
+
+  /**
+   * 
+   * @returns 
+   */
+function getLeaderBoardAsHTML(){
+    console.log ('getLeaderboardAsHTML...');
+   
+    let html = `<p class="hs_heading">LEADERBOARD</p>`;
+    for (let i = 0;i<leaderBoard.length;i++) {
+        let g = leaderBoard[i];
+        html += `${i+1}. ${g.name} ${g.score}p<br>`;
+    }
+    console.log(html);
+
+    return html;
 }
 
