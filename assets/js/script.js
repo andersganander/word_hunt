@@ -36,7 +36,7 @@ function init() {
     // Create initial leaderboard
      // Test code
      createLeaderBoard();
-     const leaderBoardHTML = getLeaderBoardAsHTML();
+     const leaderBoardHTML = getLeaderBoardAsHTML('');
      document.getElementById('highscore_area').innerHTML = leaderBoardHTML;
      // -------
 
@@ -445,10 +445,15 @@ function endGame() {
     enableGeneralControlButtons(true);
     // Make start button and info button green
     makeStartInfoBtnsGreen(true);
-    
-    // NOT USED YET
+     // update and show high score list
+    updateLeaderBoard('Player One',score);
+   
+    showHighscore();
+
+    // NOT USED YET (maybe not needed ?)
     prepareNewGame();
-    // show high score list
+
+   
 
 }
 
@@ -511,8 +516,18 @@ function createLeaderBoard(){
     leaderBoard.sort(compareByScore);
 }
 
-function updateLeaderBoard(user,score){
-
+/**
+ * 
+ * @param {string} user 
+ * @param {string} score 
+ */
+function updateLeaderBoard(user,userScore){
+    console.log("user: "+user+" score: "+userScore);
+    leaderBoard.push({name:user, score:userScore});
+    leaderBoard.sort(compareByScore);
+    leaderBoard.splice(-1,1);
+    console.log(getLeaderBoardAsHTML(user));
+    document.getElementById('highscore_area').innerHTML = getLeaderBoardAsHTML(user);
 }
 
 /**
@@ -531,13 +546,17 @@ function compareByScore(a, b) {
    * 
    * @returns 
    */
-function getLeaderBoardAsHTML(){
+function getLeaderBoardAsHTML(user){
     console.log ('getLeaderboardAsHTML...');
    
     let html = `<p class="hs_heading">LEADERBOARD</p>`;
     for (let i = 0;i<leaderBoard.length;i++) {
         let g = leaderBoard[i];
-        html += `${i+1}. ${g.name} ${g.score}p<br>`;
+        if (g.name === user){
+            html += `<span class="hs_user">${i+1}. ${g.name} ${g.score}p</span><br>`;
+        } else {
+            html += `${i+1}. ${g.name} ${g.score}p<br>`;
+        }
     }
     console.log(html);
 

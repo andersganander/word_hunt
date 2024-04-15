@@ -98,11 +98,15 @@ span {
     /* display:none; */
     font-family: "Oxanium", sans-serif;
     background-color: black;
-    color:greenyellow;
+    color:orangered;
     height: 300px;
     width: 300px;
     font-size: large;
     font-weight: bold;
+}
+
+.hs_user{
+    color:greenyellow;
 }
 
 .hs_heading{
