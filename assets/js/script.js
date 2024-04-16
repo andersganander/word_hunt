@@ -114,17 +114,22 @@ function handleBtnBlender (event){
     
    resetColorsInBoard();
    const userLetters = getLettersFromUserInputAsString();
-   const squares = document.getElementsByClassName('letter_square');
 
     // add grey background for letters in user letter area
     for (let j = 0; j < userLetters.length; j++) {
         const userletter = userLetters[j];
+        console.log("userletter "+userletter);
+        //changeColorForLetterInGrid(userletter);
+        const squares = document.getElementsByClassName('letter_square');
+        let usedSquares = [];
+
         for (let k = 0; k < squares.length; k++) {
             let sq = squares[k];
             const squareLetter = sq.innerText;
-            if (userletter === squareLetter){
+            if (userletter === squareLetter && !usedSquares.includes(k)){
                 sq.style.backgroundColor = "lightgrey";
-                break;
+                usedSquares.push(k);
+                continue;
             } 
         }
 
@@ -185,13 +190,17 @@ function handleBtnLetter() {
     /* Reduce score and write message to user */
     scoreReduction = 50;
     writeMessage('Next letter: -'+scoreReduction+' p');
-    
+    let nextLetter = '';
+
     for (let i = 0; i < userLetters.length;i++){
         if(userLetters[i].innerText === '_'){
             userLetters[i].innerText = pickedWord[i];
+            nextLetter = pickedWord[i];
             break;
         }
     }
+    changeColorForLetterInGrid(nextLetter);
+
 }
 
 function handleBtnSave() {
@@ -681,17 +690,30 @@ function resetColorsInBoard(){
     
     const squares = document.getElementsByClassName('letter_square');
     
-    console.log("length: "+squares.length);
+    //console.log("length: "+squares.length);
     for (let i = 0; i < squares.length; i++) {
-        console.log("loop "+i);
+        //console.log("loop "+i);
         let square = squares[i];
         const squareLetter = square.innerText;
-        console.log(square.style.backgroundColor);
+        //console.log(square.style.backgroundColor);
         if (i === 4){
             square.style.backgroundColor = "black";
         } else {
             square.style.backgroundColor = "white";
         }
+    }
+}
+
+function changeColorForLetterInGrid(letter) {
+    console.log("changeColorForLetterInGrid ")
+    const squares = document.getElementsByClassName('letter_square');
+    for (let k = 0; k < squares.length; k++) {
+        let sq = squares[k];
+        const squareLetter = sq.innerText;
+        if (letter === squareLetter){
+            sq.style.backgroundColor = "lightgrey";
+            break;
+        } 
     }
 }
 
