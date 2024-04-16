@@ -38,8 +38,12 @@ function init() {
     /* Event listener for the save button */
     document.getElementById('btn_save').addEventListener('click', handleBtnSave);
 
-    // TEMPORARY
-    //localStorage.clear();
+    /* Event listener for keyboard */
+    window.addEventListener("keydown", handleKeyDown);
+
+   // TEMPORARY REMOVE
+   //localStorage.clear();
+   //////////////////////
 
     // Read userdata from local storage
     // Contains code from codetheweb.blog
@@ -62,6 +66,12 @@ function init() {
      // -------
 
     /*startGame();*/
+}
+
+
+function handleKeyDown(event) {
+    console.log("Key down: " + event.key);
+
 }
 
 

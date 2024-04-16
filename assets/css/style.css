@@ -223,3 +223,88 @@ span {
   }
 
 /* Media querys */
+@media screen and (min-width: 660px) {
+
+    #general_controls_area{
+       
+        margin-top: 20px;
+        width: 600px;
+    }
+
+    #board_area{
+        /* display:grid; */
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px;
+        margin-top: 5px;
+    }
+
+    #info_area{
+       
+        height: 300px;
+        width: 300px;
+        font-size: x-large;
+        font-weight: bold;
+       
+    }
+
+    #highscore_area{
+       
+        height: 600px;
+        width: 600px;
+        font-size: large;
+       
+    }
+    
+    #message_area{
+       
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        width: 300px;
+    }
+
+    #answer_area{
+        
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 600px;
+    }
+
+    .user_letter{
+       
+        font-size: 18px;
+        font-weight: bold;
+        border: 0.5px solid black;
+        width: 60px;
+        height: 60px;
+    }
+
+    #controls_area{
+        width: 600px;
+    }
+
+    #userInput_area{
+        /*flex-direction: column;*/
+        width: 600px;
+        padding-bottom: 20px;
+       
+        margin: 20px;
+    
+    }
+
+    .control{
+      
+        width: 100px;
+        height: 100px;
+        font-size: 1.5rem;
+    
+    }
+
+    .letter_square{
+        
+        font-size: 96px;
+        font-weight: bold;
+        border: 1px solid black;
+    }
+
+  }
