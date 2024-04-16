@@ -105,7 +105,7 @@
                 <div class="user_letter">_</div>
             </div>
          
-            <div id="controls_area" style="display: none;">
+            <div id="controls_area" style="display: flex;">
                 <button id="btn_blender" class="control" disabled>
                     <i class="fa-solid fa-blender"></i>
                 </button>
@@ -119,10 +119,10 @@
                     <i class="fa-solid fa-eraser"></i>
                 </button>
             </div>
-            <div id="userInput_area" style="display: block;">
+            <div id="userInput_area" style="display: none;">
                 <p>Enter name to save the score:</p>
-                <input type="text">
-                <button>Save</button>
+                <input id="input_userName" type="text">
+                <button id="btn_save">Save</button>
             </div>
         </div>
         <!-- Mainly for testing purposes so far... -->

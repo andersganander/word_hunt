@@ -8,7 +8,7 @@ let gameIsOn = false;
 // Global variable holding the high score list
 let leaderBoard = [];
 // Global variable containing user data
-let gameUserData = {};
+let gameUserData = {userName:"guest", score:0};
 
 // Handle event DOMContentLoaded
 document.addEventListener('DOMContentLoaded', init());
@@ -35,6 +35,12 @@ function init() {
     document.getElementById('btn_enter').addEventListener('click', handleBtnEnter);
     document.getElementById('btn_letter').addEventListener('click', handleBtnLetter);
 
+    /* Event listener for the save button */
+    document.getElementById('btn_save').addEventListener('click', handleBtnSave);
+
+    // TEMPORARY
+    //localStorage.clear();
+
     // Read userdata from local storage
     // Contains code from codetheweb.blog
     const userStringFromLocalStorage = localStorage.getItem('user');
@@ -44,10 +50,13 @@ function init() {
         gameUserData = userFromLocalStorage;
         console.log(gameUserData);
     }
+    
+    console.log("gameUserData: "+gameUserData.userName);
 
     // Create initial leaderboard
      // Test code
      createLeaderBoard();
+     updateLeaderBoard(gameUserData.userName, gameUserData.score);
      const leaderBoardHTML = getLeaderBoardAsHTML('');
      document.getElementById('highscore_area').innerHTML = leaderBoardHTML;
      // -------
@@ -145,6 +154,13 @@ function handleBtnLetter() {
     }
 }
 
+function handleBtnSave() {
+    console.log("handleBtnSave: "+document.getElementById('input_userName').value);
+    const name = document.getElementById('input_userName').value;
+    const score = parseInt(document.getElementById('score_value').innerText);
+    storeUserData(name, score);
+}
+
 /**
  * Set things up after a game is finished and prepare for a new game
  */
@@ -173,6 +189,7 @@ function startGame(){
     makeStartInfoBtnsGreen();
 
     // Enable the game control buttons
+    showSaveDialog(false);
     enableGameControlButtons(true);
 
     // Resetboard
@@ -458,12 +475,19 @@ function endGame() {
     // Make start button and info button green
     makeStartInfoBtnsGreen(true);
      // update and show high score list
-    updateLeaderBoard('Player One',score);
+    updateLeaderBoard(gameUserData.userName,score);
+
+    // Show save dialog if users score is a new personal record
+    if (score > parseInt(gameUserData.score)){
+        console.log("endGame: enabling save dialog");
+        showSaveDialog(true);
+    }
    
     showHighscore();
 
+
     // Store user data
-    storeUserData();
+    //storeUserData();
 
     // NOT USED YET (maybe not needed ?)
     prepareNewGame();
@@ -581,16 +605,30 @@ function getLeaderBoardAsHTML(user){
 /**
  * 
  */
-function storeUserData(){
+function storeUserData(uname, uscore){
     // Contains code from codetheweb.blog
-    const userScore = document.getElementById('score_value').innerText;
+    //const userScore = document.getElementById('score_value').innerText;
+   console.log("storeUserData uname: "+uname);
+   console.log("storeUserData uscore: "+uscore);
+
     const user = {
-        userName: 'Player One',
-        score: userScore
+        userName: uname,
+        score: uscore
       };
       
       const userString = JSON.stringify(user);
       console.log("StoreUserData: "+userString);
       localStorage.setItem('user', userString);
+}
+
+
+function showSaveDialog(show){
+    if (show) {
+        document.getElementById('controls_area').style.display="none";
+        document.getElementById('userInput_area').style.display="block";
+    } else {
+        document.getElementById('controls_area').style.display="flex";
+        document.getElementById('userInput_area').style.display="none";
+    }
 }
 
