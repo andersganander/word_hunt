@@ -111,6 +111,39 @@ function handleBtnBlender (event){
 
     const boardLetters = getLettersFromBoardAsString();
     putLettersOnBoard(scrambleLetters(boardLetters));
+    
+    // make all letter squares white
+    // change bgcolor on sqyares with a corresponding user letter
+    const userLetters = getLettersFromUserInputAsString();
+    const squares = document.getElementsByClassName('letter_square');
+    console.log("Userletters: "+userLetters);
+    console.log("length: "+squares.length);
+    for (let i = 0; i < squares.length; i++) {
+        console.log("loop "+i);
+        let square = squares[i];
+        const squareLetter = square.innerText;
+        console.log(square.style.backgroundColor);
+        if (i === 4){
+            square.style.backgroundColor = "black";
+        } else {
+            square.style.backgroundColor = "white";
+        }
+    }
+
+    // add grey background for letters in user letter area
+    for (let j = 0; j < userLetters.length; j++) {
+        const userletter = userLetters[j];
+        for (let k = 0; k < squares.length; k++) {
+            let sq = squares[k];
+            const squareLetter = sq.innerText;
+            if (userletter === squareLetter){
+                sq.style.backgroundColor = "lightgrey";
+                break;
+            } 
+        }
+
+        
+    }
 }
 
 /**
@@ -243,7 +276,7 @@ function startGame(){
     document.getElementById('score_value').innerText = score;
     score-- ;
     let scoreCounter = setInterval(function(){
-        console.log('Current score: ' + score + ' p');
+        //console.log('Current score: ' + score + ' p');
         if(scoreReduction > 0){
             console.log('Reduces score with '+scoreReduction);
             score -= scoreReduction;
