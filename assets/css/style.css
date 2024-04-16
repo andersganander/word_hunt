@@ -73,7 +73,7 @@ body{
 .info_heading{
     font-size: xx-large;
     font-weight: bolder;
-    margin: top 0px;
+    margin-top: 0px;
     margin-bottom: unset;
 }
 
@@ -84,13 +84,16 @@ body{
 }
 
 .info_text_images{
+    width: 300px;
     text-align: left;
     font-size: small;
 }
 
 .thumbnail{
-    width: 20px;
-    height: 20px
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+    margin-right: 10px;
 }
 
 /* These styling rules comes from geeksforgeeks.org  */

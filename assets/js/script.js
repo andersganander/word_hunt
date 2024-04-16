@@ -83,16 +83,19 @@ function handleKeyDown(event) {
  */
 function handleSquareClicked (event){
     const element = event.target;
-    // make clicked square green
-    this.style.backgroundColor = "lightgreen";
+    if(gameIsOn){
+        // make clicked square grey
+        this.style.backgroundColor = "lightgrey";
 
-    const letterBoxes = document.getElementsByClassName('user_letter');
-    for (const letter of letterBoxes) {
-        if (letter.innerText === '_'){
-            letter.innerText = element.innerText;
-            break;
+        const letterBoxes = document.getElementsByClassName('user_letter');
+        for (const letter of letterBoxes) {
+            if (letter.innerText === '_'){
+                letter.innerText = element.innerText;
+                break;
+            }
         }
     }
+    
     
 }
 
@@ -641,4 +644,5 @@ function showSaveDialog(show){
         document.getElementById('userInput_area').style.display="none";
     }
 }
+
 
