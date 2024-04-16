@@ -38,8 +38,7 @@
             <div id="time_score_area">
                 <!--<div id="timer_label">Timer:</div>
                 <div id="timer_value">0:00</div>-->
-                <label for="username">User: </label>
-                <input id="username" type="text"/>
+                
                 <div id="score_label">Score:</div>
                 <div id="score_value">0</div>
             </div>
@@ -106,7 +105,7 @@
                 <div class="user_letter">_</div>
             </div>
          
-            <div id="controls_area">
+            <div id="controls_area" style="display: none;">
                 <button id="btn_blender" class="control" disabled>
                     <i class="fa-solid fa-blender"></i>
                 </button>
@@ -119,6 +118,11 @@
                 <button id="btn_erase" class="control" disabled>
                     <i class="fa-solid fa-eraser"></i>
                 </button>
+            </div>
+            <div id="userInput_area" style="display: block;">
+                <p>Enter name to save the score:</p>
+                <input type="text">
+                <button>Save</button>
             </div>
         </div>
         <!-- Mainly for testing purposes so far... -->

@@ -13,18 +13,21 @@ body{
 
 /* Game related styles */
 #game_area{
-    /*display: flex;
+    display: flex;
+    flex-direction: column;
     justify-content : center;
-    align-items: center;*/
+    align-items: center;
 }
 
 #time_score_area{
     display:flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    /*font-size: 1.3rem;*/
+    font-family: "Oxanium", sans-serif;
+    font-size: 1.3rem;
     font-weight: bold;
+
 }   
    
 
@@ -36,6 +39,7 @@ body{
     display:flex;
     justify-content: space-between;
     margin-top: 20px;
+    width: 300px;
 }
 
 .btn_green{
@@ -48,6 +52,7 @@ body{
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     margin-top: 5px;
+    justify-content: center;
 }
 
 #info_area{
@@ -58,11 +63,17 @@ body{
     width: 300px;
     font-size: x-large;
     font-weight: bold;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .info_heading{
     font-size: xx-large;
     font-weight: bolder;
+    margin: top 0px;
     margin-bottom: unset;
 }
 
@@ -89,7 +100,7 @@ body{
 }
   
 span {
-    padding: 10px;
+    padding: 0px;
 }
 
 /* ---------- */
@@ -103,6 +114,9 @@ span {
     width: 300px;
     font-size: large;
     font-weight: bold;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 
 .hs_user{
@@ -112,6 +126,7 @@ span {
 .hs_heading{
     font-size: xx-large;
     font-weight: bolder;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -122,6 +137,7 @@ span {
     margin-top: 10px;
     margin-bottom: 5px;
     font-weight: bold;
+    width: 300px;
 }
 
 #answer_area{
@@ -129,6 +145,7 @@ span {
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 20px;
+    width: 300px;
 }
 
 .user_letter{
@@ -145,6 +162,17 @@ span {
 #controls_area{
     display:flex;
     justify-content: space-between;
+    width: 300px;
+}
+
+#userInput_area{
+    /*flex-direction: column;*/
+    width: 300px;
+    padding-bottom: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    margin: 20px;
+
 }
 
 .control{

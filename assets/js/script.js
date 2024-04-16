@@ -244,7 +244,7 @@ function startGame(){
 function showInfo(){
     const display = document.getElementById('info_area').style.display; 
     if( display === 'none'){
-        document.getElementById('info_area').style.display="block";
+        document.getElementById('info_area').style.display="flex";
         document.getElementById('board_area').style.display="none";
         document.getElementById('highscore_area').style.display="none";   
     } else {
@@ -259,7 +259,7 @@ function showHighscore(){
     const display = document.getElementById('highscore_area').style.display; 
 
     if( display === 'none'){
-        document.getElementById('highscore_area').style.display="block";
+        document.getElementById('highscore_area').style.display="flex";
         document.getElementById('info_area').style.display="none";
         document.getElementById('board_area').style.display="none";
     } else {
@@ -568,7 +568,7 @@ function getLeaderBoardAsHTML(user){
     for (let i = 0;i<leaderBoard.length;i++) {
         let g = leaderBoard[i];
         if (g.name === user){
-            html += `<span class="hs_user">${i+1}. ${g.name} ${g.score}p</span><br>`;
+            html += `<span class="hs_user">${i+1}. ${g.name} ${g.score}p</span>`;
         } else {
             html += `${i+1}. ${g.name} ${g.score}p<br>`;
         }
