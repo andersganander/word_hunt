@@ -112,23 +112,9 @@ function handleBtnBlender (event){
     const boardLetters = getLettersFromBoardAsString();
     putLettersOnBoard(scrambleLetters(boardLetters));
     
-    // make all letter squares white
-    // change bgcolor on sqyares with a corresponding user letter
-    const userLetters = getLettersFromUserInputAsString();
-    const squares = document.getElementsByClassName('letter_square');
-    console.log("Userletters: "+userLetters);
-    console.log("length: "+squares.length);
-    for (let i = 0; i < squares.length; i++) {
-        console.log("loop "+i);
-        let square = squares[i];
-        const squareLetter = square.innerText;
-        console.log(square.style.backgroundColor);
-        if (i === 4){
-            square.style.backgroundColor = "black";
-        } else {
-            square.style.backgroundColor = "white";
-        }
-    }
+   resetColorsInBoard();
+   const userLetters = getLettersFromUserInputAsString();
+   const squares = document.getElementsByClassName('letter_square');
 
     // add grey background for letters in user letter area
     for (let j = 0; j < userLetters.length; j++) {
@@ -152,8 +138,16 @@ function handleBtnBlender (event){
 function handleBtnErase() {
      
     const letterBoxes = document.getElementsByClassName('user_letter');
+    const foundSpace = false;
     for (let i=0;i<letterBoxes.length;i++) {
-        if(letterBoxes[i].innerText === '_'){
+        if (i === letterBoxes.length - 1){
+            //letterBoxes[i].innerText = '_';
+            eraseAllInputLetters();
+            resetColorsInBoard();
+            scoreReduction = 10;
+            writeMessage('Erase letter: -'+scoreReduction+' p');
+        } else if(letterBoxes[i].innerText === '_'){
+            //foundSpace = true;
             if(i>0){
                 letterBoxes[i-1].innerText = '_';
                 /* Reduce score and write message to user */
@@ -675,6 +669,29 @@ function showSaveDialog(show){
     } else {
         document.getElementById('controls_area').style.display="flex";
         document.getElementById('userInput_area').style.display="none";
+    }
+}
+
+/**
+ * 
+ */
+function resetColorsInBoard(){
+     // make all letter squares white
+    // change bgcolor on sqyares with a corresponding user letter
+    
+    const squares = document.getElementsByClassName('letter_square');
+    
+    console.log("length: "+squares.length);
+    for (let i = 0; i < squares.length; i++) {
+        console.log("loop "+i);
+        let square = squares[i];
+        const squareLetter = square.innerText;
+        console.log(square.style.backgroundColor);
+        if (i === 4){
+            square.style.backgroundColor = "black";
+        } else {
+            square.style.backgroundColor = "white";
+        }
     }
 }
 
