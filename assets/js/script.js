@@ -116,12 +116,13 @@ function handleBtnBlender (event){
    const userLetters = getLettersFromUserInputAsString();
 
     // add grey background for letters in user letter area
+    let usedSquares = [];
     for (let j = 0; j < userLetters.length; j++) {
         const userletter = userLetters[j];
         console.log("userletter "+userletter);
         //changeColorForLetterInGrid(userletter);
         const squares = document.getElementsByClassName('letter_square');
-        let usedSquares = [];
+        //let usedSquares = [];
 
         for (let k = 0; k < squares.length; k++) {
             let sq = squares[k];
@@ -129,7 +130,7 @@ function handleBtnBlender (event){
             if (userletter === squareLetter && !usedSquares.includes(k)){
                 sq.style.backgroundColor = "lightgrey";
                 usedSquares.push(k);
-                continue;
+                break;
             } 
         }
 
@@ -208,6 +209,7 @@ function handleBtnSave() {
     const name = document.getElementById('input_userName').value;
     const score = parseInt(document.getElementById('score_value').innerText);
     storeUserData(name, score);
+    updateLeaderBoard(name, score);
 }
 
 /**
@@ -530,6 +532,7 @@ function endGame() {
     if (score > parseInt(gameUserData.score)){
         console.log("endGame: enabling save dialog");
         showSaveDialog(true);
+        
     }
    
     showHighscore();
