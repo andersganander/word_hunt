@@ -67,27 +67,44 @@ Wireframes were produced using Balsamiq. Since the first wireframes where made f
  </details>
 
 ## Features
-- ### Navigation / interaction
+### Navigation / interaction
 
-    - Since the game is presented on a single page there is really no navigation (links to internal or external pages).
-    - At the top of the screen there is bar with control buttons which represents different actions which includes
-        - Play button to start the game
-        - Info button to show instructions
-        - Button for showing the leaderboard
+- Since the game is presented on a single page there is really no navigation (links to internal or external pages).
+- At the top of the screen there is bar with control buttons which represents different actions which includes
+    - Play button to start the game
+    - Info button to show instructions
+    - Button for showing the leaderboard
 
 The control buttons are placed at the top of the screen, and two of them are green to make it easy for users to locate the essential functions. These buttons control which information is displayed in the center of the screen. When the instructions are being shown, and the user clicks the info button, the start screen is displayed again. The same applies to the leaderboard screen. Once the game has started, the buttons above the playing area are disabled. This is partly to prevent players from accidentally interrupting the game, but also to minimize distractions.
 
 ![General controls bar](docs/readme_images/control_bar.jpg)
 
-- ### The Start Screen
-    - The 
+### The Start Screen
+The start screen is designed to make it easy to understand how to start the game and where to find more information. This facilitates both first-time users and returning players. The color choice for the buttons is also aimed at directing users' attention to the important functions. As a complement to the buttons, a message is displayed in the message box.
 
-![Start screen image]() 
+This design strategically enhances user engagement by simplifying the initial interaction. By clearly outlining how to begin playing and where additional details can be accessed, the start screen serves as an intuitive gateway into the game, reducing potential confusion or frustration for new users. For returning players, this familiar and straightforward layout allows for quick and easy navigation, promoting repeated use. 
 
-- ### The Game Screen
-    - The 
+<!--![Start screen image](docs/readme_images/WH_start_screen.jpg)-->
+<img src="docs/readme_images/WH_start_screen.jpg" alt="image" width="300" height="auto"> 
 
-![Game screen image]() 
+### The Game Screen
+ When the start icon is clicked, the game begins. A word is randomly selected, its letters are shuffled, and placed on the game board and the game control buttons are enabled. The score displayed above starts counting down from 300. When a user clicks on a letter on the game board, that letter is copied to the first available slot in the row below. The letter on the game board is marked with a distinctive background color to help the user easily see which letters remain to be used. The user now has several options available to assist in finding the sought-after word:
+
+<b>Blender button:</b> Shuffles the letters on the game board, resulting in a deduction of 25 points from the score. When this is done, the background color also changes so that the correct letters are matched with the right background color.<br>
+<b>Next letter button:</b> Places a letter in the correct position in the row below the game board.
+Users can also choose to clear all the letters in the row below. When this action is taken, the background color of the corresponding letters on the game board also changes.
+
+<img src="docs/readme_images/WH_game_screen_1.jpg" alt="image" width="300" height="auto"> 
+<!--![Game screen image]()--> 
+
+During the game, messages are displayed in the message box to enhance the sense of presence and interactivity. The game ends when the score drops to 0 or when the user enters the correct word and presses enter. The following events then occur:
+
+- A message is shown in the message box indicating whether the correct word has been found.
+- If the correct word has been entered, it is highlighted in green.
+- If the incorrect word is entered, the correct word is displayed.
+- The leaderboard is shown.
+- If the word is correct and the score is sufficiently high, the user's name and score are displayed on the leaderboard in a distinct color.
+- If the score is the user's highest, a dialogue box appears, allowing the user to save their score with a name. When the user returns to the game, the last saved name and score are loaded and compared against the randomly generated leaderboard. If the user's previous score is still competitive, the leaderboard is updated.
 
 
 - ### How to play screen
