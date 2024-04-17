@@ -106,6 +106,7 @@ During the game, messages are displayed in the message box to enhance the sense 
 - If the word is correct and the score is sufficiently high, the user's name and score are displayed on the leaderboard in a distinct color.
 - If the score is the user's highest, a dialogue box appears, allowing the user to save their score with a name. When the user returns to the game, the last saved name and score are loaded and compared against the randomly generated leaderboard. If the user's previous score is still competitive, the leaderboard is updated.
 
+<img src="docs/readme_images/WH_game_screen_2.jpg" alt="image" width="300" height="auto"> 
 
 - ### How to play screen
     - On the 
