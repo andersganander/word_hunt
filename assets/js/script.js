@@ -365,7 +365,6 @@ function makeStartInfoBtnsGreen(active) {
 function enableGeneralControlButtons(enable) {
     document.getElementById("btn_start").disabled = !enable;
     document.getElementById("btn_info").disabled = !enable;
-    document.getElementById("btn_dark").disabled = !enable;
     document.getElementById("btn_highscore").disabled = !enable;
 }
 
