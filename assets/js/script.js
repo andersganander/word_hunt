@@ -208,6 +208,7 @@ function handleBtnSave() {
     console.log("handleBtnSave: "+document.getElementById('input_userName').value);
     const name = document.getElementById('input_userName').value;
     const score = parseInt(document.getElementById('score_value').innerText);
+    gameUserData.userName = name;
     storeUserData(name, score);
     updateLeaderBoard(name, score);
 }
@@ -279,7 +280,7 @@ function startGame(){
     // Change score to time in seconds (5 minutes = 300 sec = 300p)
     let score = 300;
     document.getElementById('score_value').innerText = score;
-    score-- ;
+    //score-- ;
     let scoreCounter = setInterval(function(){
         //console.log('Current score: ' + score + ' p');
         if(scoreReduction > 0){
@@ -503,7 +504,8 @@ function eraseWord() {
  */
 function endGame() {
     gameIsOn = false;
-    const score = parseInt(document.getElementById('score_value').innerText);
+    const score = parseInt(document.getElementById('score_value').innerText)-1;
+    //const score = gameUserData.score;
     if (score === 0) {
         console.log("Time's up!");
         addColorToUserInputLetters('white');
@@ -524,16 +526,22 @@ function endGame() {
     enableGeneralControlButtons(true);
     // Make start button and info button green
     makeStartInfoBtnsGreen(true);
-     // update and show high score list
-    updateLeaderBoard(gameUserData.userName,score);
+    
 
     // Show save dialog if users score is a new personal record
-    if (score > parseInt(gameUserData.score)){
-        console.log("endGame: enabling save dialog");
-        showSaveDialog(true);
-        
+    if (score > parseInt(gameUserData.score) ){
+        if(gameUserData.userName == 'guest'){
+            console.log("endGame: enabling save dialog");
+            showSaveDialog(true);
+        } else {
+            gameUserData.score = score;
+            storeUserData(gameUserData.userName, score);
+             // update leaderboard()
+            updateLeaderBoard(gameUserData.userName,score);
+        }   
+    } else {
+        updateLeaderBoard(gameUserData.userName,score);
     }
-   
     showHighscore();
 
 

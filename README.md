@@ -130,10 +130,10 @@ The leaderboard screen features a clear and simple design with a black backgroun
 - #### CSS
     -  The site was tested with W3C CSS Validator, without any errors.
 
-- #### Accessibility 
-    - The site was tested for accessibility with Ligthouse and 
+#### Accessibility 
+  The site was tested for accessibility with Ligthouse and got a high score
 
-![Lighthouse score]()
+![Lighthouse score](docs/readme_images/WH_lighthouse.jpg)
 
 
 ### User story testing
@@ -141,13 +141,13 @@ The tests has been done with Chrome on macOs.
 
 |  Feature | Expected result | Action | Actual result |
 | :--- | :--- | :--- | :--- |
+|Start screen |Start screen with buttons for control | | |
+|Show instructions| | | |
+|Show Leaderboard | | | |
+|Star game | | | |
+|Game - click letter in grid | | | |
 
 
-
-<details>
-    <summary>Test results</summary>
-
-</details>
 
 
 ![Feature testing]()
