@@ -254,8 +254,15 @@ span {
        
         height: 600px;
         width: 600px;
-        font-size: large;
+        font-size: xx-large;
        
+    }
+
+    .hs_heading{
+        font-size: xxx-large;
+        font-weight: bolder;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     
     #message_area{
@@ -263,7 +270,7 @@ span {
         margin-top: 10px;
         margin-bottom: 5px;
         font-weight: bold;
-        width: 300px;
+        width: 600px;
     }
 
     #answer_area{
