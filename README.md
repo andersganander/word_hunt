@@ -31,9 +31,11 @@ The design of the application serves two main objectives. Firstly, it aims to cl
 
 
 ### Colors
-The number of colors has been deliberately kept to a minimum in the design. The rationale behind this choice of colors is partly to promote readability and clarity through strong contrasts, such as black on white or white on black. However, it also involves leveraging the signaling value of certain colors. For instance, two of the buttons on the startup screen are green to guide first-time users to the most important functions (starting the game and reading instructions). The colors on the leaderboard are chosen to create a game-like atmosphere, utilizing colors and fonts commonly seen on high score lists. The user's score is highlighted in a bright yellow-green color to make it easy to quickly identify one's position on the list.
+The number of colors has been deliberately kept to a minimum in the design. The reason behind this choice of colors is partly to promote readability and clarity through strong contrasts, such as black on white or white on black. However, it also involves leveraging the signaling value of certain colors. For instance, two of the buttons on the startup screen are green to guide first-time users to the most important functions (starting the game and reading instructions). The colors on the leaderboard are chosen to create a game-like atmosphere, utilizing colors and fonts commonly seen on high score lists. The user's score is highlighted in a bright yellow-green color to make it easy to quickly identify one's position on the list.
 
 ### Fonts
+
+Two fonts are used in the game. Courier New is employed to evoke the feel of newspaper print and authenticity, but it is also used in the message box to provide a terminal-like appearance. For instructions and the leaderboard, the Oxanium typeface is used to give a retro-modern vibe and because it resembles fonts commonly used in many video games.
 
 
 ## Wireframes
@@ -65,13 +67,15 @@ Wireframes were produced using Balsamiq. Since the first wireframes where made f
  </details>
 
 ## Features
-- ### Navigation
+- ### Navigation / interaction
 
     - Since the game is presented on a single page there is really no navigation (links to internal or external pages).
     - At the top of the screen there is bar with control buttons which represents different actions which includes
         - Play button to start the game
         - Info button to show instructions
-        - Button for showing the high score list
+        - Button for showing the leaderboard
+
+The control buttons are placed at the top of the screen, and two of them are green to make it easy for users to locate the essential functions. These buttons control which information is displayed in the center of the screen. When the instructions are being shown, and the user clicks the info button, the start screen is displayed again. The same applies to the leaderboard screen. Once the game has started, the buttons above the playing area are disabled. This is partly to prevent players from accidentally interrupting the game, but also to minimize distractions.
 
 ![General controls bar](docs/readme_images/control_bar.jpg)
 
@@ -84,6 +88,7 @@ Wireframes were produced using Balsamiq. Since the first wireframes where made f
     - The 
 
 ![Game screen image]() 
+
 
 - ### How to play screen
     - On the 
