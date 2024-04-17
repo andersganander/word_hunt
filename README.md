@@ -87,6 +87,11 @@ This design strategically enhances user engagement by simplifying the initial in
 <!--![Start screen image](docs/readme_images/WH_start_screen.jpg)-->
 <img src="docs/readme_images/WH_start_screen.jpg" alt="image" width="300" height="auto"> 
 
+- ### Instructions screen
+    - On the 
+
+<img src="docs/readme_images/WH_instructions_screen.jpg" alt="image" width="300" height="auto"> 
+
 ### The Game Screen
  When the start icon is clicked, the game begins. A word is randomly selected, its letters are shuffled, and placed on the game board and the game control buttons are enabled. The score displayed above starts counting down from 300. When a user clicks on a letter on the game board, that letter is copied to the first available slot in the row below. The letter on the game board is marked with a distinctive background color to help the user easily see which letters remain to be used. The user now has several options available to assist in finding the sought-after word:
 
@@ -108,10 +113,6 @@ During the game, messages are displayed in the message box to enhance the sense 
 
 <img src="docs/readme_images/WH_game_screen_2.jpg" alt="image" width="300" height="auto"> 
 
-- ### How to play screen
-    - On the 
-
-![How to play screen image]() 
   
 - ### High score screen
     - The E
