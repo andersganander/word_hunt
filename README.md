@@ -87,8 +87,9 @@ This design strategically enhances user engagement by simplifying the initial in
 <!--![Start screen image](docs/readme_images/WH_start_screen.jpg)-->
 <img src="docs/readme_images/WH_start_screen.jpg" alt="image" width="300" height="auto"> 
 
-- ### Instructions screen
-    - On the 
+### Instructions screen
+
+The instruction screen is divided into two parts: one briefly describes the game's purpose in three lines, and the other explains the buttons that can be used during gameplay. The rationale behind this layout is to make it easy to understand how to play. This structured approach to the instruction screen ensures that players can quickly grasp the essentials of the game.  
 
 <img src="docs/readme_images/WH_instructions_screen.jpg" alt="image" width="300" height="auto"> 
 
@@ -114,10 +115,10 @@ During the game, messages are displayed in the message box to enhance the sense 
 <img src="docs/readme_images/WH_game_screen_2.jpg" alt="image" width="300" height="auto"> 
 
   
-- ### High score screen
-    - The E
+### High score screen
+The leaderboard screen features a clear and simple design with a black background and a retro-inspired font, reminiscent of old-school computer games. When the page is loaded for the first time, the leaderboard is created. Scores are randomly generated for a list of 10 names, and the list is formed. Concurrently, the user's saved name and score are retrieved from local storage. If the score is sufficiently high, the list is updated to include the user's name. The dynamic generation of scores adds an element of unpredictability and freshness each time the game is started, keeping the leaderboard exciting and competitive.
 
-![High score screen image]() 
+<img src="docs/readme_images/WH_leaderboard_screen.jpg" alt="image" width="300" height="auto"> 
 
 
 ## Testing
