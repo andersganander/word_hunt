@@ -1,40 +1,40 @@
 # Word hunt (under construction)
 
-Word hunt is a word puzzle game that is based on 'Ordjakten' which is published daily in the swedish Newspaper, Svenska Dagbladet. The objective with the printed game is to find as many words with at least four letters (where on e should be the the letter in the black square in the middle). In this version of the game, the objective is to use all nine letters to construct a valid word. 
+Word hunt is a word puzzle game that is based on 'Ordjakten' which is published daily in the swedish Newspaper, Svenska Dagbladet. The objective with the printed game is to find as many words with at least four letters (where one should be the the letter in the black square in the middle). In this version of the game, the objective is to use all nine letters to construct a valid word. To help the user, there are two different aids to facilitate the hunt for the hidden word. Each time the user uses one of these aids, the score is decreased.
 
 ![Ordjakten](docs/readme_images/ordjakten_sm.jpg)
 
 
 The live link can be found here - [Word Hunt](https://andersganander.github.io/word_hunt/)
 
-![Am I Responsive Image]()
+![Am I Responsive Image](docs/readme_images/wh_amiresponsive.jpg)
 
 ## Site Owner Goals 
 - As a site owner i want to provide the users an exciting and smooth game experience to make them willing to return to my site.
 
 ## User Stories
 - ### First time user
-  - As a first time user I want to quickly understand what the game is about and how to play
+  - As a first time user I want to quickly understand what the game is about and how to play.
 
 - ### Returning User
-  - As a returning user I want to be able to start the game without having to read instructions
-  - As a returning user I want to have the possibility to read the instructions if i need to
-  - As a returning user I want to check the high score to see if i still have the highest score
+  - As a returning user I want to be able to start the game without having to read instructions.
+  - As a returning user I want to have the possibility to read the instructions if i need to.
 
 - ### Frequent User
-  -As a returning user I want to check the high score list to see if i still have the highest score
-
+  - As a frequent user I want to check the high score to see if i still have the highest score.
+  - As a frequen user I want to try different game playing strategys to find out the best way to get a high score
 
 ## Design
-
+The design of the application serves two main objectives. Firstly, it aims to closely replicate the aesthetic of the printed version of "Svenska Dagbladet," particularly in the way the letters are arranged within a grid. This approach not only maintains a visual connection to the traditional newspaper layout but also enhances readability and familiarity for users accustomed to the print medium. Secondly, the design prioritizes user-friendliness, especially for mobile phone users. To achieve this, the interface is intentionally minimalist, featuring intuitive icons that guide the user effortlessly through the game. The color scheme is limited to a few shades to avoid visual clutter, and the text is concise, ensuring that the gameplay is straightforward and accessible. This combination of a familiar aesthetic with a streamlined functionality makes the game engaging and easy to navigate on smaller screens.
 
 ### Imagery
 
 
 ### Colors
-
+The number of colors has been deliberately kept to a minimum in the design. The rationale behind this choice of colors is partly to promote readability and clarity through strong contrasts, such as black on white or white on black. However, it also involves leveraging the signaling value of certain colors. For instance, two of the buttons on the startup screen are green to guide first-time users to the most important functions (starting the game and reading instructions). The colors on the leaderboard are chosen to create a game-like atmosphere, utilizing colors and fonts commonly seen on high score lists. The user's score is highlighted in a bright yellow-green color to make it easy to quickly identify one's position on the list.
 
 ### Fonts
+
 
 ## Wireframes
 Wireframes were produced using Balsamiq. Since the first wireframes where made for mobile they does not fully match the result. The desktop wireframes were made at a later stage in the process when the design had changed. These are the things that were changed during the process:
