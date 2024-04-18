@@ -27,9 +27,6 @@ The live link can be found here - [Word Hunt](https://andersganander.github.io/w
 ## Design
 The design of the application serves two main objectives. Firstly, it aims to closely replicate the aesthetic of the printed version of "Svenska Dagbladet," particularly in the way the letters are arranged within a grid. This approach not only maintains a visual connection to the traditional newspaper layout but also enhances readability and familiarity for users accustomed to the print medium. Secondly, the design prioritizes user-friendliness, especially for mobile phone users. To achieve this, the interface is intentionally minimalist, featuring intuitive icons that guide the user effortlessly through the game. The color scheme is limited to a few shades to avoid visual clutter, and the text is concise, ensuring that the gameplay is straightforward and accessible. This combination of a familiar aesthetic with a streamlined functionality makes the game engaging and easy to navigate on smaller screens.
 
-### Imagery
-
-
 ### Colors
 The number of colors has been deliberately kept to a minimum in the design. The reason behind this choice of colors is partly to promote readability and clarity through strong contrasts, such as black on white or white on black. However, it also involves leveraging the signaling value of certain colors. For instance, two of the buttons on the startup screen are green to guide first-time users to the most important functions (starting the game and reading instructions). The colors on the leaderboard are chosen to create a game-like atmosphere, utilizing colors and fonts commonly seen on high score lists. The user's score is highlighted in a bright yellow-green color to make it easy to quickly identify one's position on the list.
 
@@ -39,23 +36,22 @@ Two fonts are used in the game. Courier New is employed to evoke the feel of new
 
 
 ## Wireframes
-Wireframes were produced using Balsamiq. Since the first wireframes where made for mobile they does not fully match the result. The desktop wireframes were made at a later stage in the process when the design had changed. These are the things that were changed during the process:
+Wireframes were produced using Balsamiq. Since the wireframes where made there have been several changes in the design. These are the things that were changed during the process:
 - The heading ('WORD HUNT') was removed. Instead the start screen shows the grid withe words 'WORD' and 'HUNT' in it.
-- The buttons for 'Start game' and 'How to play' was changed to buttons with icons and moved to the top
-- A button for showing the high score list was added
-- The user name input field was moved and placed next to the score field
+- The buttons for 'Start game' and 'How to play' was changed to buttons with icons and moved to the top.
+- A button for showing the high score list was added.
+- The user name input field has been replaced by a save dialog, which is only visible the first time the user gets a score that's greater than 0.
 - The timer field was removed since the score is based completely on the time left.
 - A new message field was introduced and placed between the grid and the user input letters. The message field is used for communicating to the user during the game.
-- A new button for erasing a letter was added.
+- A new button for erasing the letters was added.
 
  <details>
 
  <summary>Desktop Wireframe</summary>
 
-![Desktop Wireframe]()
-![Desktop Wireframe]()
-![Desktop Wireframe]()
-![Desktop Wireframe]()
+![Desktop Wireframe](docs/readme_images/wireframes/DT_Start.png)
+![Desktop Wireframe](docs/readme_images/wireframes/DT_Instructions.png)
+![Desktop Wireframe](docs/readme_images/wireframes/DT_Highscore.png)
  </details>
 
  <details>
@@ -84,7 +80,6 @@ The start screen is designed to make it easy to understand how to start the game
 
 This design strategically enhances user engagement by simplifying the initial interaction. By clearly outlining how to begin playing and where additional details can be accessed, the start screen serves as an intuitive gateway into the game, reducing potential confusion or frustration for new users. For returning players, this familiar and straightforward layout allows for quick and easy navigation, promoting repeated use. 
 
-<!--![Start screen image](docs/readme_images/WH_start_screen.jpg)-->
 <img src="docs/readme_images/WH_start_screen.jpg" alt="image" width="300" height="auto"> 
 
 ### Instructions screen
@@ -130,6 +125,12 @@ The leaderboard screen features a clear and simple design with a black backgroun
 - #### CSS
     -  The site was tested with W3C CSS Validator, without any errors.
 
+- #### Javascript
+JSHint was used for validating the javascript code. When running it with the checkbox for New Javascript features (ES 6) checked it showed two warning, which were both fixed
+Missing semicolon
+Unused variable
+
+
 #### Accessibility 
   The site was tested for accessibility with Ligthouse and got a high score
 
@@ -137,17 +138,13 @@ The leaderboard screen features a clear and simple design with a black backgroun
 
 
 ### User story testing
-The tests has been done with Chrome on macOs. 
+The tests has been done with Chrome on macOs. The images represents how the site look on a mobile phone. Depending on screen size and resolution it may look different on other devices, but the content and the functionality should be the same.
 
-|  Feature | Expected result | Action | Actual result |
-| :--- | :--- | :--- | :--- |
-|Start screen |Start screen with buttons for control | | |
-|Show instructions| | | |
-|Show Leaderboard | | | |
-|Star game | | | |
-|Game - click letter in grid | | | |
-
-
+![Feature testing 1](docs/readme_images/tests_1.jpg)
+![Feature testing 2](docs/readme_images/tests_2.jpg)
+![Feature testing 3](docs/readme_images/tests_3.jpg)
+![Feature testing 4](docs/readme_images/tests_4.jpg)
+![Feature testing 5](docs/readme_images/tests_5.jpg)
 
 
 ![Feature testing]()
@@ -165,9 +162,12 @@ In addition to testing responsiness with Am I Responsive and Responsinator the s
 All the bugs that were discovered during the development have been documented using GitHub issues. 
 ![List of fixed bugs]()
 
-### Known Bugs
-- 
+###
 
+### Known Bugs
+
+## Future improvements
+[text](https://github.com/andersganander/word_hunt/issues/73)
 ## Technologies Used
 
 ### Languages
