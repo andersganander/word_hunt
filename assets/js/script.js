@@ -504,8 +504,11 @@ function eraseWord() {
  */
 function endGame() {
     gameIsOn = false;
-    const score = parseInt(document.getElementById('score_value').innerText)-1;
-    //const score = gameUserData.score;
+    const score = parseInt(document.getElementById('score_value').innerText);
+    if (score < 0){
+        score = 0;
+    }
+   
     if (score === 0) {
         console.log("Time's up!");
         addColorToUserInputLetters('white');
