@@ -147,12 +147,10 @@ The tests has been done with Chrome on macOs. The images represents how the site
 ![Feature testing 5](docs/readme_images/tests_5.jpg)
 
 
-![Feature testing]()
-
 ### Browser Testing
 The site were tested in the most common browsers (Chrome, Firefox, Safari and Edge). Alll browsers were tested on mac os except for Edge which was tested on Windows 11.
 
-![Browser testing]()
+![Browser testing](docs/readme_images/browser_tests.jpg)
 
     
 ### Device Testing
@@ -165,9 +163,31 @@ All the bugs that were discovered during the development have been documented us
 ###
 
 ### Known Bugs
+The following bugs have been identified during the tests conducted, but have not been resolved. None of the bugs are considered to be showstoppers.
+
+![List of known bugs](docs/readme_images/known_bugs.jpg)
+
+#### User can click on Next letter button nine times in a row and get more than 0 p [#68](https://github.com/andersganander/word_hunt/issues/68)
+If the user clicks fast on the Next Letter button nine times, all the letters are shown (as they should), but the score is not reduced correctly. Every time the Next Letter button is clicked, the score should be reduced with 50p so after 6 clicks the score should be 0p and hence the game should stop. This works if you click with a 'normal' pace, but if you click fast you trick the system and therefore you can get a score slightly less than 100p.
+
+Proposed solution:
+**Alt 1** One way could be to disable the button for a couple of seconds after it's been clicked. In pseudo code it could look something like this:
+In the eventHandler for the Next Button onClick
+set disabled = true on the button
+set timeout to 3000
+call function that enables the button after the set timeout time
+
+**Alt 2** Implement a counter for the number of clicks on the Next Letter button and set a limit to 3. When the limit is reached set button to disabled.
+
+Regardless of which proposed solution is chosen, thorough testing must be conducted before the solution can be deployed, as an incorrect implementation could compromise the game's fundamental functionality. Therefore, this bug won't be fixed in this first release.
+
+ 
+ 
 
 ## Future improvements
-[text](https://github.com/andersganander/word_hunt/issues/73)
+
+![List of feature improvements](docs/readme_images/future_improvements.jpg)
+
 ## Technologies Used
 
 ### Languages
@@ -206,12 +226,10 @@ The live link can be found here - [REAL Records](https://andersganander.github.i
 
 ## Credits
 
-### Content
-All texts was written by the site owner.
+### Code
 
-### Media
-#### Photos
-- Photo
+FYLL I HÄR
+
 
 #### Fonts and icons
 - 
@@ -226,4 +244,6 @@ All texts was written by the site owner.
 
 
 ## Acknowledgments
--
+- Niclas, sean
+- Slack community
+- Mentor
