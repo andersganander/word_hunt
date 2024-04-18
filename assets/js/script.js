@@ -729,8 +729,11 @@ function changeColorForLetterInGrid(letter) {
         let sq = squares[k];
         const squareLetter = sq.innerText;
         if (letter === squareLetter){
-            sq.style.backgroundColor = "lightgrey";
-            break;
+            if (sq.style.backgroundColor !== "lightgrey"){
+                sq.style.backgroundColor = "lightgrey";
+                break;
+            }
+            
         } 
     }
 }
