@@ -504,9 +504,11 @@ function eraseWord() {
  */
 function endGame() {
     gameIsOn = false;
-    const score = parseInt(document.getElementById('score_value').innerText);
+    let score = parseInt(document.getElementById('score_value').innerText);
     if (score < 0){
         score = 0;
+    } else if (score >0) {
+        score -= 1;
     }
    
     if (score === 0) {
