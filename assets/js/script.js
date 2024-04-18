@@ -212,6 +212,7 @@ function handleBtnSave() {
         gameUserData.userName = name;
         storeUserData(name, score);
         updateLeaderBoard(name, score);
+        document.getElementById('btn_save').disabled = "true";
     }
 }
 
