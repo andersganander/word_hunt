@@ -206,11 +206,13 @@ function handleBtnLetter() {
 
 function handleBtnSave() {
     console.log("handleBtnSave: "+document.getElementById('input_userName').value);
-    const name = document.getElementById('input_userName').value;
+    const name = document.getElementById('input_userName').value.trim();
     const score = parseInt(document.getElementById('score_value').innerText);
-    gameUserData.userName = name;
-    storeUserData(name, score);
-    updateLeaderBoard(name, score);
+    if (name.length > 0){
+        gameUserData.userName = name;
+        storeUserData(name, score);
+        updateLeaderBoard(name, score);
+    }
 }
 
 /**
