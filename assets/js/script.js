@@ -233,7 +233,7 @@ function startGame() {
         "Emphasize", "Frostbite", "Gondolier", "Heiresses", "Inverting", "Jerusalem", "Knockouts", "Lifetimes",
         "Mortified", "Nightmare", "Overjoyed", "Playhouse", "Quickstep", "Recycling", "Sleekness", "Trainable",
         "Unplugged", "Vaporizes", "Wolfberry", "Exercised", "Yachtsman", "Zookeeper"
-    ]
+    ];
 
     const pickedWord = nineletterWords[Math.floor(Math.random() * nineletterWords.length)].toUpperCase();
     const scrambledWord = scrambleLetters(pickedWord);
@@ -506,7 +506,6 @@ function scrambleLetters(word) {
     const origLen = word.length;
     let newLen = origLen;
     let newWord = '';
-    let x = 0;
     for (let i = 0; i < origLen; i++) {
         let x = Math.floor(Math.random() * newLen);
         newWord += word.charAt(x);
