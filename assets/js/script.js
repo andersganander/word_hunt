@@ -247,6 +247,8 @@ function startGame() {
     // Change the state of the game by using the GLOBAL variable gameIsOn
     gameIsOn = true;
 
+    writeMessage('Click the letters');
+
     // Start timer, change score to time in seconds (5 minutes = 300 sec = 300p)
     let score = 300;
     document.getElementById('score_value').innerText = score;
