@@ -5,12 +5,15 @@ Word hunt is a word puzzle game that is based on 'Ordjakten' which is published 
 ![Ordjakten](docs/readme_images/ordjakten_sm.jpg)
 
 
+The focus has been on creating an appealing game with a sleek and simple design that uses interactivity to enhance the gaming experience. For example, the background color of the selected letter changes, or a message appears when a help function is used or the correct word is guessed. By offering help functions that users can use at the cost of points, their motivation to play again increases as they figure out the best way to use these functions to improve their score. How long should one wait before using the help functions? Which help suits me best? Is it easier to see the word when the letters are shuffled? Saving and displaying the user's highest score on a leaderboard also increases their desire to return.
+
+
 The live link can be found here - [Word Hunt](https://andersganander.github.io/word_hunt/)
 
 ![Am I Responsive Image](docs/readme_images/wh_amiresponsive.jpg)
 
 ## Site Owner Goals 
-- As a site owner i want to provide the users an exciting and smooth game experience to make them willing to return to my site.
+- As a site owner, I aim to provide users with an exciting and smooth gaming experience that encourages them to return to my site.
 
 ## User Stories
 - ### First time user
@@ -22,10 +25,10 @@ The live link can be found here - [Word Hunt](https://andersganander.github.io/w
 
 - ### Frequent User
   - As a frequent user I want to check the high score to see if i still have the highest score.
-  - As a frequen user I want to try different game playing strategys to find out the best way to get a high score
+  - As a frequent user I want to try different game playing strategys to find out the best way to get a high score.
 
 ## Design
-The design of the application serves two main objectives. Firstly, it aims to closely replicate the aesthetic of the printed version of "Svenska Dagbladet," particularly in the way the letters are arranged within a grid. This approach not only maintains a visual connection to the traditional newspaper layout but also enhances readability and familiarity for users accustomed to the print medium. Secondly, the design prioritizes user-friendliness, especially for mobile phone users. To achieve this, the interface is intentionally minimalist, featuring intuitive icons that guide the user effortlessly through the game. The color scheme is limited to a few shades to avoid visual clutter, and the text is concise, ensuring that the gameplay is straightforward and accessible. This combination of a familiar aesthetic with a streamlined functionality makes the game engaging and easy to navigate on smaller screens.
+The design of the application serves two main objectives. Firstly, it aims to closely replicate the aesthetic of the printed version of the game in "Svenska Dagbladet," particularly in the way the letters are arranged within a grid. Secondly, the design prioritizes user-friendliness, especially for mobile phone users. To achieve this, the interface is intentionally minimalist, featuring intuitive icons that guide the user effortlessly through the game. The color scheme is limited to a few shades to avoid visual clutter, and the text is concise, ensuring that the gameplay is straightforward and accessible. This combination of a familiar aesthetic with a streamlined functionality makes the game engaging and easy to navigate on smaller screens.
 
 ### Colors
 The number of colors has been deliberately kept to a minimum in the design. The reason behind this choice of colors is partly to promote readability and clarity through strong contrasts, such as black on white or white on black. However, it also involves leveraging the signaling value of certain colors. For instance, two of the buttons on the startup screen are green to guide first-time users to the most important functions (starting the game and reading instructions). The colors on the leaderboard are chosen to create a game-like atmosphere, utilizing colors and fonts commonly seen on high score lists. The user's score is highlighted in a bright yellow-green color to make it easy to quickly identify one's position on the list.
@@ -95,7 +98,6 @@ The instruction screen is divided into two parts: one briefly describes the game
 Users can also choose to clear all the letters in the row below. When this action is taken, the background color of the corresponding letters on the game board also changes.
 
 <img src="docs/readme_images/WH_game_screen_1.jpg" alt="image" width="300" height="auto"> 
-<!--![Game screen image]()--> 
 
 During the game, messages are displayed in the message box to enhance the sense of presence and interactivity. The game ends when the score drops to 0 or when the user enters the correct word and presses enter. The following events then occur:
 
@@ -184,7 +186,8 @@ call function that enables the button after the set timeout time
 
 Regardless of which proposed solution is chosen, thorough testing must be conducted before the solution can be deployed, as an incorrect implementation could compromise the game's fundamental functionality. Therefore, this bug won't be fixed in this first release.
 
- 
+ #### Button icons are blue on ios devices #52 ####
+ Since this behaviour can be considered "as designed" (by Apple) it will not be fixed. The blue color is good enough.
  
 
 ## Future improvements
@@ -209,6 +212,7 @@ Regardless of which proposed solution is chosen, thorough testing must be conduc
 - [Lighthouse](https://developer.chrome.com/docs/devtools/) - Used for overall accessibility testing from dev tools.
 - [Responsinator](http://www.responsinator.com/) - Used to verify responsiveness.
 - [W3C](https://www.w3.org/) - Used for validation of HTML and CSS.
+- [JSHint](https://www.jshint.com/) - Used for validation of javascript.
 
 ## Deployment
 
@@ -225,28 +229,34 @@ At the top of the page there's a section describing the status of your site and 
 To remove the project from auto-deploy:
 Repeat step 1-2 in the above list, then click the drop down under 'Branch' and select 'None'. Click 'Save'.
 
-The live link can be found here - [REAL Records](https://andersganander.github.io/word_hunt/)
+The live link can be found here - [Word Hunt](https://andersganander.github.io/word_hunt/)
 
 ## Credits
 
-### Code
-
-FYLL I HÄR
-
+### Content
+- 100 nine-letter words were created with ChatGPT
+- Some of the made up names used on the leaderboard was created by ChatGPT. These are: "WordSmith", "Anagram Ace", "LexiMaster", "CrosswordKid" and "Letter Lover".
 
 #### Fonts and icons
-- 
-- [Font Awesome](https://fontawesome.com/) used for icons in footer and event cards
-- [Freefavicon](https://www.freefavicon.com/) used for creating favicon.
-
+- [Google Fonts](fonts.google.com) used for fonts. The oxanium font was found here.
+- [Font Awesome](https://fontawesome.com/) used for icons on buttons.
 
 ### Resources Used
-- Love Math walkthrough for inspiration, especially how to .
+- Love Math walkthrough for inspiration, especially how to divide the screen into different areas.
 - [Mmdn](https://developer.mozilla.org/en-US/docs/Web/CSS) for tutorials, tips and tricks
 - [w3Schools] (https://www.w3schools.com/) for tutorials, tips and tricks. 
 
+These articles and posts have been used for different tasks. No code has been used without modification.
+- [How to Vertically Align Text Next to an image using CSS](https://www.geeksforgeeks.org/how-to-vertically-align-text-next-to-an-image-using-css/)
+  Was used for figuring out how to align images and text for the instructions.
+- [How to sort by object property in JavaScript](https://byby.dev/js-sort-by-object-property)
+  The function compareByAge was modified into compareByScore and changed to make the sorting descending.
+- [Remove the last Item From an Array in JavaScript](https://www.geeksforgeeks.org/javascript-remove-the-last-item-from-an-array/)
+  Code from "Method 1: Using Array splice() Method" was used in the UpdateLeaderboard function.
+- [How to store data in the browser using JavaScript localStorage](https://codetheweb.blog/javascript-localstorage/)
+  Code from this article was used in the storeUserData function and in init() when data is retrieved from local storage.
 
 ## Acknowledgments
-- Niclas, sean
-- Slack community
-- Mentor
+- My mentor, Antonio, has been very supportive during the entire process and guided me in the right direction.
+- Fellow students Sean and Niclas for their feedback during the development and testing phases. 
+- The slack community, especially the channels #community-sweden, #mar-2024-dfs-gut and #learn-javascript (where i got great advices about how to handle global variables).
