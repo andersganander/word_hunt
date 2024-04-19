@@ -247,13 +247,13 @@ The live link can be found here - [Word Hunt](https://andersganander.github.io/w
 - [w3Schools] (https://www.w3schools.com/) for tutorials, tips and tricks. 
 
 These articles and posts have been used for different tasks. No code has been used without modification.
-- [How to Vertically Align Text Next to an image using CSS](https://www.geeksforgeeks.org/how-to-vertically-align-text-next-to-an-image-using-css/)
+- [How to Vertically Align Text Next to an image using CSS](https://www.geeksforgeeks.org/how-to-vertically-align-text-next-to-an-image-using-css/)<br>
   Was used for figuring out how to align images and text for the instructions.
-- [How to sort by object property in JavaScript](https://byby.dev/js-sort-by-object-property)
+- [How to sort by object property in JavaScript](https://byby.dev/js-sort-by-object-property)<br>
   The function compareByAge was modified into compareByScore and changed to make the sorting descending.
-- [Remove the last Item From an Array in JavaScript](https://www.geeksforgeeks.org/javascript-remove-the-last-item-from-an-array/)
+- [Remove the last Item From an Array in JavaScript](https://www.geeksforgeeks.org/javascript-remove-the-last-item-from-an-array/)<br>
   Code from "Method 1: Using Array splice() Method" was used in the UpdateLeaderboard function.
-- [How to store data in the browser using JavaScript localStorage](https://codetheweb.blog/javascript-localstorage/)
+- [How to store data in the browser using JavaScript localStorage](https://codetheweb.blog/javascript-localstorage/)<br>
   Code from this article was used in the storeUserData function and in init() when data is retrieved from local storage.
 
 ## Acknowledgments
