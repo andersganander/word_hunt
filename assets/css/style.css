@@ -1,6 +1,6 @@
 /* Global */
 
-/* Standard theme. Might be changed to classes for dark and light... */
+/* Standard theme.*/
 body{
     background-color: white;
     font-family: 'Courier New', Courier, monospace;
@@ -8,7 +8,6 @@ body{
     text-align: center;
     display: flex;
     justify-content : center;
-    /*align-items : center;*/
 }
 
 /* Game related styles */
@@ -30,7 +29,6 @@ body{
 
 }   
    
-
 #timer_value{
     margin-right: 10px;
 }
@@ -48,7 +46,6 @@ body{
 
 /* Grid with 3 rows and 3 cols to hold the letters*/
 #board_area{
-    /* display:grid; */
     grid-template-columns: 100px 100px 100px;
     grid-template-rows: 100px 100px 100px;
     margin-top: 5px;
@@ -56,7 +53,6 @@ body{
 }
 
 #info_area{
-    /* display:none; */
     font-family: "Oxanium", sans-serif;
     background-color: white;
     height: 300px;
@@ -80,7 +76,6 @@ body{
 .info_text{
     margin-top: 5px;
     font-size: medium;
-
 }
 
 .info_text_images{
@@ -105,11 +100,9 @@ body{
 span {
     padding: 0px;
 }
-
-/* ---------- */
+/* End of code from geeksforgeeks.org */
 
 #highscore_area{
-    /* display:none; */
     font-family: "Oxanium", sans-serif;
     background-color: black;
     color:orangered;
@@ -169,13 +162,11 @@ span {
 }
 
 #userInput_area{
-    /*flex-direction: column;*/
     width: 300px;
     padding-bottom: 20px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px #ccc;
     margin: 20px;
-
 }
 
 .control{
@@ -185,16 +176,7 @@ span {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
-    /*color: black;*/
-    /*text-align: center;*/
-    /*align-items: center;*/
 }
-
-/* adjustment */
-/*button > i{
-    text-align: center;
-    color:black;
-} */
 
 /* Square for each letter */
 .letter_square{
@@ -216,46 +198,31 @@ span {
     color: white;
 }
 
-/* Buttons */
-
-/* Google Font */
-.nanum-pen script-regular {
-    font-family: "Nanum Pen Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-
 /* Media querys */
 @media screen and (min-width: 660px) {
 
     #general_controls_area{
-       
         margin-top: 20px;
         width: 600px;
     }
 
     #board_area{
-        /* display:grid; */
         grid-template-columns: 200px 200px 200px;
         grid-template-rows: 200px 200px 200px;
         margin-top: 5px;
     }
 
     #info_area{
-       
         height: 300px;
         width: 300px;
         font-size: x-large;
         font-weight: bold;
-       
     }
 
     #highscore_area{
-       
         height: 600px;
         width: 600px;
         font-size: xx-large;
-       
     }
 
     .hs_heading{
@@ -266,7 +233,6 @@ span {
     }
     
     #message_area{
-       
         margin-top: 10px;
         margin-bottom: 5px;
         font-weight: bold;
@@ -274,14 +240,12 @@ span {
     }
 
     #answer_area{
-        
         margin-top: 10px;
         margin-bottom: 20px;
         width: 600px;
     }
 
     .user_letter{
-       
         font-size: 18px;
         font-weight: bold;
         border: 0.5px solid black;
@@ -294,27 +258,20 @@ span {
     }
 
     #userInput_area{
-        /*flex-direction: column;*/
         width: 600px;
         padding-bottom: 20px;
-       
         margin: 20px;
-    
     }
 
     .control{
-      
         width: 100px;
         height: 100px;
         font-size: 1.5rem;
-    
     }
 
     .letter_square{
-        
         font-size: 96px;
         font-weight: bold;
         border: 1px solid black;
     }
-
   }
