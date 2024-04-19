@@ -160,7 +160,7 @@ The site were tested in the most common browsers (Chrome, Firefox, Safari and Ed
 In addition to testing responsiness with Am I Responsive and Responsinator the site has also been tested on some ios devices (iPhone SE and iPad). 
 
 ### Fixed Bugs
-Bugs discovered during the development phase after deployment and later during the testing phase were recorded and managed in GitHub Issues. Here is a list of the fixed bugs and how they were resolved:
+Bugs discovered during the development phase after deployment and later during the testing phase were registered and managed in GitHub Issues. Here is a list of the fixed bugs and how they were resolved:
 [Closed issues](https://github.com/andersganander/word_hunt/issues?q=label%3Abug+is%3Aclosed)
 
 ![List of fixed bugs](docs/readme_images/WH_fixed_bugs.jpg)
@@ -238,7 +238,7 @@ The live link can be found here - [Word Hunt](https://andersganander.github.io/w
 - Some of the made up names used on the leaderboard was created by ChatGPT. These are: "WordSmith", "Anagram Ace", "LexiMaster", "CrosswordKid" and "Letter Lover".
 
 #### Fonts and icons
-- [Google Fonts](fonts.google.com) used for fonts. The oxanium font was found here.
+- [Google Fonts](http://fonts.google.com) used for fonts. The oxanium font was found here.
 - [Font Awesome](https://fontawesome.com/) used for icons on buttons.
 
 ### Resources Used
