@@ -1,4 +1,4 @@
-# Word hunt (under construction)
+# Word hunt
 
 Word hunt is a word puzzle game that is based on 'Ordjakten' which is published daily in the swedish Newspaper, Svenska Dagbladet. The objective with the printed game is to find as many words with at least four letters (where one should be the the letter in the black square in the middle). In this version of the game, the objective is to use all nine letters to construct a valid word. To help the user, there are two different aids to facilitate the hunt for the hidden word. Each time the user uses one of these aids, the score is decreased.
 
@@ -65,15 +65,14 @@ Wireframes were produced using Balsamiq. Since the wireframes where made there h
 ## Features
 ### Navigation / interaction
 
-- Since the game is presented on a single page there is really no navigation (links to internal or external pages).
-- At the top of the screen there is bar with control buttons which represents different actions which includes
+Since the game is presented on a single page there is really no navigation (links to internal or external pages). At the top of the screen there is bar with control buttons which represents different actions which includes
     - Play button to start the game
     - Info button to show instructions
     - Button for showing the leaderboard
 
 The control buttons are placed at the top of the screen, and two of them are green to make it easy for users to locate the essential functions. These buttons control which information is displayed in the center of the screen. When the instructions are being shown, and the user clicks the info button, the start screen is displayed again. The same applies to the leaderboard screen. Once the game has started, the buttons above the playing area are disabled. This is partly to prevent players from accidentally interrupting the game, but also to minimize distractions.
 
-![General controls bar](docs/readme_images/control_bar.jpg)
+![General controls bar](docs/readme_images/WH_controls.jpg)
 
 ### The Start Screen
 The start screen is designed to make it easy to understand how to start the game and where to find more information. This facilitates both first-time users and returning players. The color choice for the buttons is also aimed at directing users' attention to the important functions. As a complement to the buttons, a message is displayed in the message box.
@@ -146,6 +145,8 @@ The tests has been done with Chrome on macOs. The images represents how the site
 ![Feature testing 4](docs/readme_images/tests_4.jpg)
 ![Feature testing 5](docs/readme_images/tests_5.jpg)
 
+The bug that was found regarding the Next Letter button was registered as a bug in GitHub and then prioritzed and fixed. 
+https://github.com/andersganander/word_hunt/issues/72 
 
 ### Browser Testing
 The site were tested in the most common browsers (Chrome, Firefox, Safari and Edge). Alll browsers were tested on mac os except for Edge which was tested on Windows 11.
@@ -157,8 +158,10 @@ The site were tested in the most common browsers (Chrome, Firefox, Safari and Ed
 In addition to testing responsiness with Am I Responsive and Responsinator the site has also been tested on some ios devices (iPhone SE and iPad). 
 
 ### Fixed Bugs
-All the bugs that were discovered during the development have been documented using GitHub issues. 
-![List of fixed bugs]()
+Bugs discovered during the development phase after deployment and later during the testing phase were recorded and managed in GitHub Issues. Here is a list of the fixed bugs and how they were resolved:
+[Closed issues](https://github.com/andersganander/word_hunt/issues?q=label%3Abug+is%3Aclosed)
+
+![List of fixed bugs](docs/readme_images/WH_fixed_bugs.jpg)
 
 ###
 
