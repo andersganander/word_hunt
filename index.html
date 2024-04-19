@@ -7,7 +7,7 @@
         <!-- Google font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+       <!-- <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet"> -->
         <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
         <!-- Font Awesome-->
         <script src="https://kit.fontawesome.com/4278793463.js" crossorigin="anonymous"></script>
@@ -16,11 +16,7 @@
     <body>
         
         <div id="game_area">
-            <!--<div> <h1>Word Hunt</h1></div>-->
-            <!--<div id="input_area">
-                <label for="username">Username: </label><br>
-                <input id="username" type="text"/>
-            </div>-->
+            <!-- Area for the general control buttons -->
             <div id="general_controls_area">
                 <button id="btn_start" class="control btn_green"  aria-label="Start button">
                     <i class="fa-solid fa-play"></i>
@@ -32,13 +28,12 @@
                     <i class="fa-solid fa-award"></i>
                 </button>
             </div>
+            <!-- Area for showing the updated score -->
             <div id="time_score_area">
-                <!--<div id="timer_label">Timer:</div>
-                <div id="timer_value">0:00</div>-->
-                
                 <div id="score_label">Score:</div>
                 <div id="score_value">0</div>
             </div>
+            <!-- Area for the grid with the letters-->
             <div id="board_area" style="display: grid;">
                 <div class="letter_square">W</div>
                 <div class="letter_square">O</div>
@@ -50,12 +45,14 @@
                 <div class="letter_square">N</div>
                 <div class="letter_square">T</div>
             </div>
+            <!-- Area for showing the instructions -->
             <div id="info_area" style="display: none;">
                 <p class="info_heading">INSTRUCTIONS</p>
                     <p class="info_text">FIND THE 9-LETTER WORD!<br>
                    CLICK THE LETTERS IN THE GRID<br>
                     SCORE IS COUNTING DOWN FROM 300
                 </p>
+
                 <div class="info_text_images">
                     <div class="aligned">
                         <img src="assets/images/btn_blender_img.jpg" class="thumbnail" alt="">
@@ -75,21 +72,13 @@
                      </div>
                 </div>
             </div>
+            <!-- Area for showing the leaderbord -->
             <div id="highscore_area" style="display: none;">
-                <p class="hs_heading">LEADERBOARD</p>
-                1. Mr G 295p<br>
-                2. Mr Lichard 294p<br>
-                3. Filur 199p<br>
-                4. Steve Wiebe 198p<br>
-                <span class="hs_user">5. Dark Knight 168p</span><br>
-                6. Kilroy 146p<br>
-                7. Ziggy S 133p<br>
-                8. Janne 55p<br>
-                9. Billy Mitchell 1p<br>
-                10. Donald T 0p<br>
-                
+                <p class="hs_heading">LEADERBOARD</p>   
             </div>
+            <!-- Area for showing messages to the user -->
             <div id="message_area">$ Press Play or Info</div>
+            <!-- Area where the letters from the grid are shown when a letter is clicked -->
             <div id="answer_area">
                 <div class="user_letter">_</div>
                 <div class="user_letter">_</div>
@@ -101,7 +90,7 @@
                 <div class="user_letter">_</div>
                 <div class="user_letter">_</div>
             </div>
-         
+            <!-- Area for the game control buttons -->
             <div id="controls_area" style="display: flex;">
                 <button id="btn_blender" class="control"  aria-label="Blender button" disabled>
                     <i class="fa-solid fa-blender"></i>
@@ -116,13 +105,14 @@
                     <i class="fa-solid fa-eraser"></i>
                 </button>
             </div>
+            <!-- Are for the save dialog -->
             <div id="userInput_area" requried style="display: none;">
                 <p>Enter name to save the score:</p>
                 <input id="input_userName" type="text">
                 <button id="btn_save">Save</button>
             </div>
         </div>
-        <!-- Mainly for testing purposes so far... -->
+
         <input type="hidden" id="pickedWord" value="">
         <script src="assets/js/script.js"></script>
     </body>
